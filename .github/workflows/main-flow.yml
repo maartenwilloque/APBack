@@ -3,7 +3,7 @@
   jobs:
     bandservice:
       runs-on: ubuntu-latest
-      name: band-service container for the coolest bands
+      name: band-service for the coolest bands
       steps:
         - name: check out repo
           uses: actions/checkout@v3
@@ -23,7 +23,7 @@
           run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
         - name: Docker Build
-          run: docker build -t ${{ secrets.DOCKER_USER }}/product-service:latest ./band-service
+          run: docker build -t ${{ secrets.DOCKER_USER }}/band-service:latest ./band-service
 
         - name: Upload container to Docker Hub with Push
           run: docker push ${{ secrets.DOCKER_USER }}/band-service:latest
@@ -50,7 +50,7 @@
           run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
         - name: Docker Build
-          run: docker build -t ${{ secrets.DOCKER_USER }}/inventory-service:latest ./user-service
+          run: docker build -t ${{ secrets.DOCKER_USER }}/user-service:latest ./user-service
 
         - name: Upload container to Docker Hub with Push
           run: docker push ${{ secrets.DOCKER_USER }}/user-service:latest
@@ -77,7 +77,7 @@
           run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
         - name: Docker Build
-          run: docker build -t ${{ secrets.DOCKER_USER }}/order-service:latest ./album-service
+          run: docker build -t ${{ secrets.DOCKER_USER }}/album-service:latest ./album-service
 
         - name: Upload container to Docker Hub with Push
           run: docker push ${{ secrets.DOCKER_USER }}/album-service:latest
