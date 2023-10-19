@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "song")
+@Table(name = "songs")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -19,7 +19,4 @@ public class Song {
     private String title;
     private int duration;
     private String spotifyId;
-    @ManyToOne
-    @JoinColumn(name = "albumId")
-    private Album album;
 }

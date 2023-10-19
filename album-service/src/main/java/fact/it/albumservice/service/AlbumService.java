@@ -33,10 +33,10 @@ public class AlbumService {
     private final AlbumRepository albumRepository;
     private final WebClient webClient;
 
-    @Value("${BAND_SERVICE_BASEURL: localhost:8080}")
+    @Value("${bandService.baseurl}")
     private String bandServiceBaseURL;
 
-    @Value("${USER_SERVICE_BASEURL: localhost:8082}")
+    @Value("${userService.baseurl}")
     private String userServiceBaseUrl;
 
     public AlbumResponse getAlbum(long Id){
@@ -54,8 +54,12 @@ public class AlbumService {
         return albumResponse;
     }
 
-    public List<Album> getAlbums() {
-        return albumRepository.findAll().stream().toList();
+    public List<AlbumResponse> getAlbums() {
+        List<Album> albums = albumRepository.findAll();
+
+
+
+        return albums.stream().map(album -> new AlbumResponse(album.getAlbumId(),album.getTitle(),album.getYear(),album.getSongs())).collect(Collectors.toList());
     }
 
 
