@@ -1,5 +1,5 @@
 services:
- mongo-band:
+ mongo-bands:
   image: mongo:latest
   ports:
     - 27017:27017
