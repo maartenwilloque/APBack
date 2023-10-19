@@ -1,5 +1,6 @@
 package fact.it.albumservice.dto;
 
+import fact.it.albumservice.model.Song;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ public class AlbumResponse {
     private String albumId;
     private String title;
     private int Year;
-    private String bandId;
-    private List<SongDto> songs;
+    //private BandResponse band;
+    private List<Song> songs;
 
 }

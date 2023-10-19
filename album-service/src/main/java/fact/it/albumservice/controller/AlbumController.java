@@ -1,5 +1,6 @@
 package fact.it.albumservice.controller;
 
+import fact.it.albumservice.dto.AlbumResponse;
 import fact.it.albumservice.model.Album;
 import fact.it.albumservice.service.AlbumService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ public class AlbumController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public Album getAlbum(int Id){
+    public AlbumResponse getAlbum(int Id){
         return albumService.getAlbum(Id);
     }
 }
