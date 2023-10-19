@@ -6,6 +6,7 @@ import fact.it.albumservice.dto.SongDto;
 import fact.it.albumservice.model.Album;
 import fact.it.albumservice.model.Song;
 import fact.it.albumservice.repository.AlbumRepository;
+import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -19,6 +20,15 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Transactional
 public class AlbumService {
+
+    @PostConstruct
+    public void loadData(){
+        Album album = new Album();
+        album.setAlbumId("1");
+        album.setYear(1991);
+        album.setTitle("Nevermind");
+        album.setBandId("Nirvana");
+    }
 
     private final AlbumRepository albumRepository;
     private final WebClient webClient;
@@ -42,6 +52,10 @@ public class AlbumService {
 
 
         return albumResponse;
+    }
+
+    public List<Album> getAlbums() {
+        return albumRepository.findAll().stream().toList();
     }
 
 
