@@ -11,7 +11,7 @@ services:
   ports:
     - 3306:3306
   volumes:
-    - mysql_order_data:/var/lib/mysql
+    - mysql_album_data:/var/lib/mysql
   environment:
    MYSQL_ROOT_PASSWORD: abc123
     
@@ -20,7 +20,7 @@ services:
   ports:
     - 3307:3306
   volumes:
-    - mysql_inventory_data:/var/lib/mysql
+    - mysql_user_data:/var/lib/mysql
   environment:
    MYSQL_ROOT_PASSWORD: abc123
     
