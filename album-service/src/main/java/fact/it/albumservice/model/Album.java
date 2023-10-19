@@ -23,6 +23,6 @@ public class Album {
     private String title;
     private int Year;
     private String bandId;
-    @OneToMany(mappedBy = "album")
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Song> songs;
 }

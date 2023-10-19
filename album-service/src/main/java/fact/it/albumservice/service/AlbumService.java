@@ -1,7 +1,6 @@
 package fact.it.albumservice.service;
 
 import fact.it.albumservice.dto.AlbumResponse;
-import fact.it.albumservice.dto.BandResponse;
 import fact.it.albumservice.dto.SongDto;
 import fact.it.albumservice.model.Album;
 import fact.it.albumservice.model.Song;
