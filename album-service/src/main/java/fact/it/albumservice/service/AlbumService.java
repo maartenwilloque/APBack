@@ -33,7 +33,7 @@ public class AlbumService {
         songs.add(song);
 
             // Load songs into the list
-            /*songs.add(new Song(1L, "Smells Like Teen Spirit", 299, "spotify-link-1"));
+            songs.add(new Song(1L, "Smells Like Teen Spirit", 299, "spotify-link-1"));
             songs.add(new Song(2L, "In Bloom", 251, "spotify-link-2"));
             songs.add(new Song(3L, "Come as You Are", 219, "spotify-link-3"));
             songs.add(new Song(4L, "Breed", 183, "spotify-link-4"));
@@ -44,7 +44,8 @@ public class AlbumService {
             songs.add(new Song(9L, "Lounge Act", 156, "spotify-link-9"));
             songs.add(new Song(10L, "Stay Away", 186, "spotify-link-10"));
             songs.add(new Song(11L, "On a Plain", 193, "spotify-link-11"));
-            songs.add(new Song(12L, "Something in the Way", 224, "spotify-link-12"));*/
+            songs.add(new Song(12L, "Something in the Way", 224, "spotify-link-12"));
+        songRepository.saveAll(songs);
         album.setAlbumId("1");
         album.setYear(1991);
         album.setTitle("Nevermind");
@@ -82,6 +83,11 @@ public class AlbumService {
 
 
         return albums.stream().map(album -> new AlbumResponse(album.getAlbumId(),album.getTitle(),album.getYear(),album.getSongs())).collect(Collectors.toList());
+    }
+
+    public List<Song> getSongs(){
+        List<Song> songs = songRepository.findAll();
+        return songs.stream().toList();
     }
 
 

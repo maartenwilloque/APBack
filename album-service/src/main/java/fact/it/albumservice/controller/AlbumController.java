@@ -2,6 +2,7 @@ package fact.it.albumservice.controller;
 
 import fact.it.albumservice.dto.AlbumResponse;
 import fact.it.albumservice.model.Album;
+import fact.it.albumservice.model.Song;
 import fact.it.albumservice.service.AlbumService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,4 +26,8 @@ public class AlbumController {
     public List<AlbumResponse> getAlbums(){
         return albumService.getAlbums();
     }
+
+    @GetMapping("/songs")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Song> getSongs() { return albumService.getSongs();}
 }
