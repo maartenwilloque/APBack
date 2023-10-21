@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,4 +18,6 @@ public class BandMember {
     private String lastName;
     private String nickName;
     private String instrument;
+    @DBRef
+    private Band band;
 }

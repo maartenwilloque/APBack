@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -22,5 +23,6 @@ public class Band {
     private String bandID;
     private String name;
     private String nationality;
+    @DBRef
     private List<BandMember> bandMembers;
 }

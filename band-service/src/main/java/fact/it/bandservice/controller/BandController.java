@@ -1,17 +1,39 @@
 package fact.it.bandservice.controller;
 
-import fact.it.bandservice.repository.BandMemberRepository;
-import fact.it.bandservice.repository.BandRepository;
+import fact.it.bandservice.dto.BandMemberResponse;
+import fact.it.bandservice.dto.BandResponse;
+import fact.it.bandservice.service.BandService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
 public class BandController {
-    private final BandRepository bandRepository;
-    private final BandMemberRepository bandMemberRepository;
+    private final BandService bandService;
+    @GetMapping("/bands")
+    @ResponseStatus(HttpStatus.OK)
+    public List<BandResponse> getBands(){
+        return bandService.getBands();
+    }
 
-    
-}
+    @GetMapping("/band/{Id}")
+    @ResponseStatus(HttpStatus.OK)
+    public BandResponse getBand(@PathVariable("Id") String bandId) {
+        return  bandService.getBand(bandId);
+    }
+
+    @GetMapping("/bandmembers")
+    @ResponseStatus(HttpStatus.OK)
+    public List<BandMemberResponse> getBandMembers(){
+        return bandService.getBandMembers();
+    }
+
+
+    }
+
