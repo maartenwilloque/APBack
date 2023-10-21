@@ -34,6 +34,12 @@ public class BandController {
         return bandService.getBandMembers();
     }
 
+    @GetMapping("/bandmember/{Id}")
+    @ResponseStatus(HttpStatus.OK)
+    public BandMemberResponse getBandMember(@PathVariable("Id") String bandMemberId){
+        return  bandService.getBandMember(bandMemberId);
+    }
+
 
     }
 

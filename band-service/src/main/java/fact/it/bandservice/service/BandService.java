@@ -22,7 +22,7 @@ public class BandService {
     private final BandRepository bandRepository;
     private final BandMemberRepository bandMemberRepository;
 
-    @PostConstruct
+    /*@PostConstruct
     public void init(){
         BandMember member = BandMember.builder()
                 .firstName("Kurt")
@@ -56,7 +56,7 @@ public class BandService {
         bandMemberRepository.save(member2);
         bandMemberRepository.save(member3);
 
-    }
+    }*/
 
     public List<BandResponse> getBands(){
         List<Band> bands = bandRepository.findAll();
