@@ -1,6 +1,7 @@
 package fact.it.albumservice.controller;
 
 import fact.it.albumservice.dto.AlbumResponse;
+import fact.it.albumservice.dto.SongResponse;
 import fact.it.albumservice.model.Album;
 import fact.it.albumservice.model.Song;
 import fact.it.albumservice.service.AlbumService;
@@ -29,5 +30,9 @@ public class AlbumController {
 
     @GetMapping("/songs")
     @ResponseStatus(HttpStatus.OK)
-    public List<Song> getSongs() { return albumService.getSongs();}
+    public List<SongResponse> getSongs() { return albumService.getSongs();}
+
+    @GetMapping("/song/{Id}")
+    @ResponseStatus(HttpStatus.OK)
+    public SongResponse getSong(@PathVariable("Id") Long songId) {return albumService.getSong(songId);}
 }
