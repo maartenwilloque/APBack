@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 @Transactional
 public class AlbumService {
 
-    /*@PostConstruct
+    @PostConstruct
     public void init(){
         Album album = new Album();
         List<SongDto> songDtoList = new ArrayList<>();
@@ -46,7 +46,7 @@ public class AlbumService {
         album.setBandId("Nirvana");
         album.setSongs(songs);
         albumRepository.save(album);
-    }*/
+    }
 
     private final AlbumRepository albumRepository;
     private final SongRepository songRepository;
