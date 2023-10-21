@@ -18,6 +18,4 @@ public class BandMember {
     private String lastName;
     private String nickName;
     private String instrument;
-    @DBRef
-    private Band band;
 }

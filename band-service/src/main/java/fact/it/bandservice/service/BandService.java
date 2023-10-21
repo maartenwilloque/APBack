@@ -75,7 +75,7 @@ public class BandService {
     public List<BandMemberResponse> getBandMembers() {
         List<BandMember> bandMembers = bandMemberRepository.findAll();
 
-        return bandMembers.stream().map(bandMember -> new BandMemberResponse(bandMember.getFirstName(),bandMember.getLastName(),bandMember.getNickName(),bandMember.getInstrument(),mapToBandDto(bandMember.getBand()))).toList();
+        return bandMembers.stream().map(bandMember -> new BandMemberResponse(bandMember.getFirstName(),bandMember.getLastName(),bandMember.getNickName(),bandMember.getInstrument()/*,mapToBandDto(bandMember.getBand())*/)).toList();
     }
 
     public BandMemberResponse getBandMember(String Id){
@@ -84,7 +84,7 @@ public class BandService {
         bandMemberResponse.setFirstName(bandMember.getFirstName());
         bandMemberResponse.setLastName(bandMember.getLastName());
         bandMemberResponse.setNickName(bandMember.getNickName());
-        bandMemberResponse.setBand(mapToBandDto(bandMember.getBand()));
+        //bandMemberResponse.setBand(mapToBandDto(bandMember.getBand()));
         return bandMemberResponse;
     }
 
