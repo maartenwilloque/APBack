@@ -82,7 +82,7 @@ public class AlbumService {
 
 
 
-        return albums.stream().map(album -> new AlbumResponse(album.getAlbumId(),album.getTitle(),album.getYear(),album.getSongs())).collect(Collectors.toList());
+        return albums.stream().map(album -> new AlbumResponse(album.getAlbumId(),album.getTitle(),album.getYear(),mapToSongDto(album.getSongs()))).toList();
     }
 
     public List<Song> getSongs(){
