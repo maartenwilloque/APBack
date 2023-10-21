@@ -22,7 +22,7 @@ public class BandService {
     private final BandRepository bandRepository;
     private final BandMemberRepository bandMemberRepository;
 
-    /*@PostConstruct
+    @PostConstruct
     public void init(){
         BandMember member = BandMember.builder()
                 .firstName("Kurt")
@@ -48,15 +48,15 @@ public class BandService {
                 .name("Nirvana")
                 .nationality("American")
                 .build();
-        band.getBandMembers().add(member);
-        band.getBandMembers().add(member2);
-        band.getBandMembers().add(member3);
+       // band.getBandMembers().add(member);
+       // band.getBandMembers().add(member2);
+       // band.getBandMembers().add(member3);
         bandRepository.save(band);
         bandMemberRepository.save(member);
         bandMemberRepository.save(member2);
         bandMemberRepository.save(member3);
 
-    }*/
+    }
 
     public List<BandResponse> getBands(){
         List<Band> bands = bandRepository.findAll();
