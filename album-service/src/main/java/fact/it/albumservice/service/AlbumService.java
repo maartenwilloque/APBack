@@ -25,7 +25,7 @@ public class AlbumService {
     @PostConstruct
     public void init(){
         Album album = new Album();
-        List<SongDto> songDtoList = new ArrayList<>();
+        /*List<SongDto> songDtoList = new ArrayList<>();
         List<Song> songs = new ArrayList<>();
         songDtoList.add(new SongDto("Smells Like Teen Spirit", 299, "spotify_id_1"));
         songDtoList.add(new SongDto("In Bloom", 251, "spotify_id_2"));
@@ -39,12 +39,11 @@ public class AlbumService {
         songDtoList.add(new SongDto("Stay Away", 186, "spotify_id_10"));
         songDtoList.add(new SongDto("On a Plain", 193, "spotify_id_11"));
         songDtoList.add(new SongDto("Something in the Way", 224, "spotify_id_12"));
-        songDtoList.forEach(songDto ->  songs.add(saveSong(songDto)));
+        songDtoList.forEach(songDto ->  songs.add(saveSong(songDto)));*/
         album.setAlbumId("1");
         album.setYear(1991);
         album.setTitle("Nevermind");
         album.setBandId("Nirvana");
-        album.setSongs(songs);
         albumRepository.save(album);
     }
 
