@@ -74,7 +74,7 @@ public class BandService {
         bandResponse.setBandId(band.getBandID());
         bandResponse.setName(band.getName());
         bandResponse.setNationality(band.getNationality());
-        bandResponse.setMembers(mapToBandMemberDto(band.getBandMembers()));
+        bandResponse.setMembers(mapToBandMemberDto(band.getBandMemberList()));
         return bandResponse;
     }
     public List<BandMemberResponse> getBandMembers() {
