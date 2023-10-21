@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,12 +18,12 @@ import java.util.List;
 @AllArgsConstructor
 public class Album {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String albumId;
     private String title;
     private int Year;
     private String bandId;
     @OneToMany(cascade = CascadeType.ALL)
-    private List<Song> songs;
+    private List<Song> songs = new ArrayList<>();
 }
