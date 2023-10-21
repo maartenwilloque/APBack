@@ -49,7 +49,6 @@ public class AlbumService {
         album.setYear(1991);
         album.setTitle("Nevermind");
         album.setBandId("Nirvana");
-        album.getSongs().add(song);
         albumRepository.save(album);
 
     }
