@@ -27,30 +27,30 @@ public class AlbumService {
     @PostConstruct
     public void init(){
         Album album = new Album();
-        List<Song> songs = new ArrayList<>();
-        Song song = new Song(1L, "Smells Like Teen Spirit", 299, "spotify-link-1");
-        songRepository.save(song);
-        songs.add(song);
-
-            // Load songs into the list
-            songs.add(new Song(1L, "Smells Like Teen Spirit", 299, "spotify-link-1"));
-            songs.add(new Song(2L, "In Bloom", 251, "spotify-link-2"));
-            songs.add(new Song(3L, "Come as You Are", 219, "spotify-link-3"));
-            songs.add(new Song(4L, "Breed", 183, "spotify-link-4"));
-            songs.add(new Song(5L, "Lithium", 262, "spotify-link-5"));
-            songs.add(new Song(6L, "Polly", 168, "spotify-link-6"));
-            songs.add(new Song(7L, "Territorial Pissings", 142, "spotify-link-7"));
-            songs.add(new Song(8L, "Drain You", 224, "spotify-link-8"));
-            songs.add(new Song(9L, "Lounge Act", 156, "spotify-link-9"));
-            songs.add(new Song(10L, "Stay Away", 186, "spotify-link-10"));
-            songs.add(new Song(11L, "On a Plain", 193, "spotify-link-11"));
-            songs.add(new Song(12L, "Something in the Way", 224, "spotify-link-12"));
-        songRepository.saveAll(songs);
         album.setAlbumId("1");
         album.setYear(1991);
         album.setTitle("Nevermind");
         album.setBandId("Nirvana");
         albumRepository.save(album);
+        List<Song> songs = new ArrayList<>();
+        Song song = new Song();
+        songs.add(song);
+
+            // Load songs into the list
+            songs.add(new Song(1L, "Smells Like Teen Spirit", 299, "spotify-link-1", album));
+            songs.add(new Song(2L, "In Bloom", 251, "spotify-link-2", album));
+            songs.add(new Song(3L, "Come as You Are", 219, "spotify-link-3", album));
+            songs.add(new Song(4L, "Breed", 183, "spotify-link-4", album));
+            songs.add(new Song(5L, "Lithium", 262, "spotify-link-5", album));
+            songs.add(new Song(6L, "Polly", 168, "spotify-link-6", album));
+            songs.add(new Song(7L, "Territorial Pissings", 142, "spotify-link-7", album));
+            songs.add(new Song(8L, "Drain You", 224, "spotify-link-8", album));
+            songs.add(new Song(9L, "Lounge Act", 156, "spotify-link-9", album));
+            songs.add(new Song(10L, "Stay Away", 186, "spotify-link-10", album));
+            songs.add(new Song(11L, "On a Plain", 193, "spotify-link-11", album));
+            songs.add(new Song(12L, "Something in the Way", 224, "spotify-link-12", album));
+        songRepository.saveAll(songs);
+
 
     }
 
@@ -98,14 +98,4 @@ public class AlbumService {
                 song.getSpotifyId()
         )).collect(Collectors.toList());
     }
-
-    private void saveSong(SongDto songDto){
-        Song song = new Song();
-        song.setDuration(songDto.getDuration());
-        song.setTitle(songDto.getTitle());
-        song.setSpotifyId(songDto.getSpotifyId());
-        songRepository.save(song);
-    }
-
-
 }

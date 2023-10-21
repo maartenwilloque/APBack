@@ -19,6 +19,8 @@ public class Song {
     private String title;
     private int duration;
     private String spotifyId;
+    @ManyToOne
+    private Album album;
 
 
 }
