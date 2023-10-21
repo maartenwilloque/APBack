@@ -21,14 +21,19 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Transactional
 public class AlbumService {
-
+    private final AlbumRepository albumRepository;
+    private final SongRepository songRepository;
+    private final WebClient webClient;
     @PostConstruct
     public void init(){
         Album album = new Album();
         List<Song> songs = new ArrayList<>();
+        Song song = new Song(1L, "Smells Like Teen Spirit", 299, "spotify-link-1");
+        songRepository.save(song);
+        songs.add(song);
 
             // Load songs into the list
-            songs.add(new Song(1L, "Smells Like Teen Spirit", 299, "spotify-link-1"));
+            /*songs.add(new Song(1L, "Smells Like Teen Spirit", 299, "spotify-link-1"));
             songs.add(new Song(2L, "In Bloom", 251, "spotify-link-2"));
             songs.add(new Song(3L, "Come as You Are", 219, "spotify-link-3"));
             songs.add(new Song(4L, "Breed", 183, "spotify-link-4"));
@@ -39,7 +44,7 @@ public class AlbumService {
             songs.add(new Song(9L, "Lounge Act", 156, "spotify-link-9"));
             songs.add(new Song(10L, "Stay Away", 186, "spotify-link-10"));
             songs.add(new Song(11L, "On a Plain", 193, "spotify-link-11"));
-            songs.add(new Song(12L, "Something in the Way", 224, "spotify-link-12"));
+            songs.add(new Song(12L, "Something in the Way", 224, "spotify-link-12"));*/
         album.setAlbumId("1");
         album.setYear(1991);
         album.setTitle("Nevermind");
@@ -48,9 +53,7 @@ public class AlbumService {
         albumRepository.save(album);
     }
 
-    private final AlbumRepository albumRepository;
-    private final SongRepository songRepository;
-    private final WebClient webClient;
+
 
     @Value("${bandService.baseurl}")
     private String bandServiceBaseURL;
