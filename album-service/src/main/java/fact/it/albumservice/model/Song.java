@@ -20,4 +20,5 @@ public class Song {
     private int duration;
     private String spotifyId;
 
+
 }
