@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SongDto {
-    private Long id;
     private String title;
     private int duration;
     private String spotifyId;

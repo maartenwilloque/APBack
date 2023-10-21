@@ -5,6 +5,7 @@ import fact.it.albumservice.dto.SongDto;
 import fact.it.albumservice.model.Album;
 import fact.it.albumservice.model.Song;
 import fact.it.albumservice.repository.AlbumRepository;
+import fact.it.albumservice.repository.SongRepository;
 import jakarta.annotation.PostConstruct;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -24,19 +25,21 @@ public class AlbumService {
     @PostConstruct
     public void init(){
         Album album = new Album();
+        List<SongDto> songDtoList = new ArrayList<>();
         List<Song> songs = new ArrayList<>();
-        songs.add(new Song(1L,"Smells Like Teen Spirit", 299, "spotify_id_1"));
-        songs.add(new Song(2L,"In Bloom", 251, "spotify_id_2"));
-        songs.add(new Song(3L,"Come as You Are", 219, "spotify_id_3"));
-        songs.add(new Song(4L,"Breed", 183, "spotify_id_4"));
-        songs.add(new Song(5L,"Lithium", 262, "spotify_id_5"));
-        songs.add(new Song(6L,"Polly", 168, "spotify_id_6"));
-        songs.add(new Song(7L,"Territorial Pissings", 142, "spotify_id_7"));
-        songs.add(new Song(8L,"Drain You", 224, "spotify_id_8"));
-        songs.add(new Song(9L,"Lounge Act", 156, "spotify_id_9"));
-        songs.add(new Song(10L,"Stay Away", 186, "spotify_id_10"));
-        songs.add(new Song(12L,"On a Plain", 193, "spotify_id_11"));
-        songs.add(new Song(13L,"Something in the Way", 224, "spotify_id_12"));
+        songDtoList.add(new SongDto("Smells Like Teen Spirit", 299, "spotify_id_1"));
+        songDtoList.add(new SongDto("In Bloom", 251, "spotify_id_2"));
+        songDtoList.add(new SongDto("Come as You Are", 219, "spotify_id_3"));
+        songDtoList.add(new SongDto("Breed", 183, "spotify_id_4"));
+        songDtoList.add(new SongDto("Lithium", 262, "spotify_id_5"));
+        songDtoList.add(new SongDto("Polly", 168, "spotify_id_6"));
+        songDtoList.add(new SongDto("Territorial Pissings", 142, "spotify_id_7"));
+        songDtoList.add(new SongDto("Drain You", 224, "spotify_id_8"));
+        songDtoList.add(new SongDto("Lounge Act", 156, "spotify_id_9"));
+        songDtoList.add(new SongDto("Stay Away", 186, "spotify_id_10"));
+        songDtoList.add(new SongDto("On a Plain", 193, "spotify_id_11"));
+        songDtoList.add(new SongDto("Something in the Way", 224, "spotify_id_12"));
+        songDtoList.forEach(songDto ->  songs.add(saveSong(songDto)));
         album.setAlbumId("1");
         album.setYear(1991);
         album.setTitle("Nevermind");
@@ -46,6 +49,7 @@ public class AlbumService {
     }
 
     private final AlbumRepository albumRepository;
+    private final SongRepository songRepository;
     private final WebClient webClient;
 
     @Value("${bandService.baseurl}")
@@ -80,11 +84,19 @@ public class AlbumService {
 
     private List<SongDto> mapToSongDto(List<Song> songs ){
         return songs.stream().map(song -> new SongDto(
-                song.getId(),
                 song.getTitle(),
                 song.getDuration(),
                 song.getSpotifyId()
         )).collect(Collectors.toList());
+    }
+
+    private Song saveSong(SongDto songDto){
+        Song song = new Song();
+        song.setDuration(songDto.getDuration());
+        song.setTitle(songDto.getTitle());
+        song.setSpotifyId(songDto.getSpotifyId());
+        songRepository.save(song);
+        return song;
     }
 
 

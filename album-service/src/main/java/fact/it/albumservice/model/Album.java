@@ -18,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 public class Album {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String albumId;
     private String title;
