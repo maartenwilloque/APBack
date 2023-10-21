@@ -65,7 +65,7 @@ public class BandService {
 
     public List<BandResponse> getBands(){
         List<Band> bands = bandRepository.findAll();
-        return bands.stream().map(band -> new BandResponse(band.getBandID(),band.getName(),band.getNationality(),mapToBandMemberDto(band.getBandMembers()))).toList();
+        return bands.stream().map(band -> new BandResponse(band.getBandID(),band.getName(),band.getNationality(),mapToBandMemberDto(band.getBandMemberList()))).toList();
     }
 
     public BandResponse getBand(String Id){
