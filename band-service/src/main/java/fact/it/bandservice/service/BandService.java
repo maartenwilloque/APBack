@@ -50,7 +50,7 @@ public class BandService {
         bandMembers.add(member2);
         bandMembers.add(member3);
         Band band = Band.builder()
-                .bandID(UUID.randomUUID().toString())
+                .bandID("1")
                 .name("Nirvana")
                 .nationality("American")
                 .bandMembers(bandMembers)
