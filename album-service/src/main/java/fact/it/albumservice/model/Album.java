@@ -24,6 +24,6 @@ public class Album {
     private String title;
     private int Year;
     private String bandId;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
     private List<Song> songs = new ArrayList<>();
 }
