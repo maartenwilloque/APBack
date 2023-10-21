@@ -25,10 +25,10 @@ public class BandService {
 
     @PostConstruct
     public void init(){
-        Band nirvana = new Band();
-        nirvana.setName("Nirvana");
-        nirvana.setNationality("American");
-        nirvana.setBandMembers(new ArrayList<>());
+        //Band nirvana = new Band();
+        //nirvana.setName("Nirvana");
+        //nirvana.setNationality("American");
+        //nirvana.setBandMembers(new ArrayList<>());
 
         // Create band members for Nirvana
         BandMember member1 = new BandMember();
@@ -50,12 +50,12 @@ public class BandService {
         member3.setInstrument("Drums");
 
         // Add band members to the Nirvana band
-        nirvana.getBandMembers().add(member1);
-        nirvana.getBandMembers().add(member2);
-        nirvana.getBandMembers().add(member3);
+        //nirvana.getBandMembers().add(member1);
+        //nirvana.getBandMembers().add(member2);
+        //nirvana.getBandMembers().add(member3);
 
         // Save the band and its members to the database
-        bandRepository.save(nirvana);
+        //bandRepository.save(nirvana);
         bandMemberRepository.save(member1);
         bandMemberRepository.save(member2);
         bandMemberRepository.save(member3);
