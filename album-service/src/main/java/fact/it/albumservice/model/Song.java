@@ -20,6 +20,7 @@ public class Song {
     private int duration;
     private String spotifyId;
     @ManyToOne
+    @JoinColumn(name = "album_id")
     private Album album;
 
 
