@@ -12,6 +12,7 @@ import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -24,6 +25,7 @@ public class BandService {
 
     @PostConstruct
     public void init(){
+
         BandMember member = BandMember.builder()
                 .firstName("Kurt")
                 .lastName("Cobain")
@@ -43,11 +45,18 @@ public class BandService {
                 .nickName("Dave")
                 .instrument("Drums")
                 .build();
+        List<BandMember> bandMembers = new ArrayList<>();
+        bandMembers.add(member);
+        bandMembers.add(member2);
+        bandMembers.add(member3);
         Band band = Band.builder()
                 .bandID(UUID.randomUUID().toString())
                 .name("Nirvana")
                 .nationality("American")
+                .bandMembers(bandMembers)
                 .build();
+
+
        // band.getBandMembers().add(member);
        // band.getBandMembers().add(member2);
        // band.getBandMembers().add(member3);
