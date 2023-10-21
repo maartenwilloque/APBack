@@ -33,6 +33,7 @@ public class AlbumService {
         List<Song> songs = new ArrayList<>();
         songs.add(new Song(1L,"Smells Like Teen Spirit", 299, "spotify-link-1",album));
         songs.add(new Song(2L,"In Bloom", 251, "spotify-link-2",album));
+        album.setSongs(songs);
     }
 
     private final AlbumRepository albumRepository;
