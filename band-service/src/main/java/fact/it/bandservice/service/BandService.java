@@ -25,43 +25,38 @@ public class BandService {
 
     @PostConstruct
     public void init(){
+        Band nirvana = new Band();
+        nirvana.setName("Nirvana");
+        nirvana.setNationality("American");
+        nirvana.setBandMembers(new ArrayList<>());
 
-        BandMember member = BandMember.builder()
-                .firstName("Kurt")
-                .lastName("Cobain")
-                .nickName("Kurt")
-                .instrument("Vocals, Guitar")
-                .build();
+        // Create band members for Nirvana
+        BandMember member1 = new BandMember();
+        member1.setFirstName("Kurt");
+        member1.setLastName("Cobain");
+        member1.setNickName("Kurt");
+        member1.setInstrument("Vocals, Guitar");
 
-        BandMember member2 = BandMember.builder()
-                .firstName("Krist")
-                .lastName("Novoselic")
-                .nickName("Krist")
-                .instrument("Bass")
-                .build();
-        BandMember member3 = BandMember.builder()
-                .firstName("Dave")
-                .lastName("Grohl")
-                .nickName("Dave")
-                .instrument("Drums")
-                .build();
-        List<BandMember> bandMembers = new ArrayList<>();
-        bandMembers.add(member);
-        bandMembers.add(member2);
-        bandMembers.add(member3);
-        Band band = Band.builder()
-                .bandID("1")
-                .name("Nirvana")
-                .nationality("American")
-                .bandMembers(bandMembers)
-                .build();
+        BandMember member2 = new BandMember();
+        member2.setFirstName("Krist");
+        member2.setLastName("Novoselic");
+        member2.setNickName("Krist");
+        member2.setInstrument("Bass");
 
+        BandMember member3 = new BandMember();
+        member3.setFirstName("Dave");
+        member3.setLastName("Grohl");
+        member3.setNickName("Dave");
+        member3.setInstrument("Drums");
 
-       // band.getBandMembers().add(member);
-       // band.getBandMembers().add(member2);
-       // band.getBandMembers().add(member3);
-        bandRepository.save(band);
-        bandMemberRepository.save(member);
+        // Add band members to the Nirvana band
+        nirvana.getBandMembers().add(member1);
+        nirvana.getBandMembers().add(member2);
+        nirvana.getBandMembers().add(member3);
+
+        // Save the band and its members to the database
+        bandRepository.save(nirvana);
+        bandMemberRepository.save(member1);
         bandMemberRepository.save(member2);
         bandMemberRepository.save(member3);
 
