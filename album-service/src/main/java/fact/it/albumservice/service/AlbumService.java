@@ -115,7 +115,6 @@ public class AlbumService {
                 song.getDuration(),
                 song.getSpotifyId(),
                 mapToAlbumDto(song.getAlbum())
-
         )).collect(Collectors.toList());
     }
     private AlbumDto mapToAlbumDto(Album album){
