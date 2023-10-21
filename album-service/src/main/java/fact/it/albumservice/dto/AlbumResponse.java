@@ -15,6 +15,6 @@ public class AlbumResponse {
     private String title;
     private int Year;
     //private BandResponse band;
-    private List<Song> songs;
+    private List<SongDto> songs;
 
 }

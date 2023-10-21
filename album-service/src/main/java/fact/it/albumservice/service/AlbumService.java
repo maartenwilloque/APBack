@@ -71,7 +71,7 @@ public class AlbumService {
         //albumResponse.setBand(band);
         albumResponse.setYear(album.getYear());
         albumResponse.setTitle(album.getTitle());
-        albumResponse.setSongs(album.getSongs());
+        albumResponse.setSongs(mapToSongDto(album.getSongs()));
 
 
         return albumResponse;
