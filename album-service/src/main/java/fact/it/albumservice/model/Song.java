@@ -19,4 +19,8 @@ public class Song {
     private String title;
     private int duration;
     private String spotifyId;
+    @ManyToOne
+    @JoinColumn(name = "albumId")
+    private Album album;
+
 }

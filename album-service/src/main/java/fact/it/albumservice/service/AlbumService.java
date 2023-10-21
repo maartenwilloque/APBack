@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,7 +22,7 @@ import java.util.stream.Collectors;
 public class AlbumService {
 
     @PostConstruct
-    public void loadData(){
+    public void init(){
         Album album = new Album();
         album.setAlbumId("1");
         album.setYear(1991);
@@ -29,6 +30,9 @@ public class AlbumService {
         album.setBandId("Nirvana");
 
         albumRepository.save(album);
+        List<Song> songs = new ArrayList<>();
+        songs.add(new Song(1L,"Smells Like Teen Spirit", 299, "spotify-link-1",album));
+        songs.add(new Song(2L,"In Bloom", 251, "spotify-link-2",album));
     }
 
     private final AlbumRepository albumRepository;
