@@ -63,7 +63,6 @@ public class AlbumService {
 
     public AlbumResponse getAlbum(long Id) {
         Album album = albumRepository.getReferenceById(Id);
-        //BandResponse band = webClient.get().uri("http://"+bandServiceBaseURL+"/api/band", uriBuilder -> uriBuilder.queryParam("bandId",album.getBandId()).build()).retrieve().bodyToMono(BandResponse.class).block();
         AlbumResponse albumResponse = new AlbumResponse();
         albumResponse.setAlbumId(album.getAlbumId());
         albumResponse.setBand(getBand(album.getBandId()));

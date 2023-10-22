@@ -12,8 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BandResponse {
-    private String id;
-    private String bandID;
+    private String bandId;
     private String name;
     private String nationality;
+    private List<BandMemberDto> members;
 }

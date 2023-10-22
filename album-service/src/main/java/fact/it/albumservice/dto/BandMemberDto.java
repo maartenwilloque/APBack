@@ -9,7 +9,6 @@ import org.springframework.data.annotation.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BandMemberDto {
-    private String id;
     private String firstName;
     private String lastName;
     private String nickName;
