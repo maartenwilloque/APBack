@@ -26,7 +26,7 @@ public class BandService {
     @PostConstruct
     public void init(){
         Band nirvana = new Band();
-        nirvana.setBandID("1");
+        nirvana.setBandID("NIRVANA");
         nirvana.setName("Nirvana");
         nirvana.setNationality("American");
         nirvana.setBandMemberList(new ArrayList<>());
@@ -69,7 +69,7 @@ public class BandService {
     }
 
     public BandResponse getBand(String Id){
-        Band band = bandRepository.findById(Id).get();
+        Band band = bandRepository.findByBandID(Id);
         BandResponse bandResponse = new BandResponse();
         bandResponse.setBandId(band.getBandID());
         bandResponse.setName(band.getName());

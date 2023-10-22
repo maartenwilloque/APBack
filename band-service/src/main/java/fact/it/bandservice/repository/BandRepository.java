@@ -6,4 +6,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 
 public interface BandRepository extends MongoRepository<Band, String> {
+
+    Band findByBandID(String bandId);
 }

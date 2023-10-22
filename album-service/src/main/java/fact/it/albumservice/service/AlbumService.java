@@ -1,9 +1,6 @@
 package fact.it.albumservice.service;
 
-import fact.it.albumservice.dto.AlbumDto;
-import fact.it.albumservice.dto.AlbumResponse;
-import fact.it.albumservice.dto.SongDto;
-import fact.it.albumservice.dto.SongResponse;
+import fact.it.albumservice.dto.*;
 import fact.it.albumservice.model.Album;
 import fact.it.albumservice.model.Song;
 import fact.it.albumservice.repository.AlbumRepository;
@@ -33,7 +30,7 @@ public class AlbumService {
         album.setAlbumId("1");
         album.setYear(1991);
         album.setTitle("Nevermind");
-        album.setBandId("Nirvana");
+        album.setBandId("NIRVANA");
         albumRepository.save(album);
         List<Song> songs = new ArrayList<>();
         Song song = new Song();
@@ -66,11 +63,10 @@ public class AlbumService {
 
     public AlbumResponse getAlbum(long Id) {
         Album album = albumRepository.getReferenceById(Id);
-        //List<SongDto> songDtoList = mapToSongDto(album.getSongs().stream().toList());
         //BandResponse band = webClient.get().uri("http://"+bandServiceBaseURL+"/api/band", uriBuilder -> uriBuilder.queryParam("bandId",album.getBandId()).build()).retrieve().bodyToMono(BandResponse.class).block();
         AlbumResponse albumResponse = new AlbumResponse();
         albumResponse.setAlbumId(album.getAlbumId());
-        //albumResponse.setBand(band);
+        albumResponse.setBand(getBand(album.getBandId()));
         albumResponse.setYear(album.getYear());
         albumResponse.setTitle(album.getTitle());
         albumResponse.setSongs(mapToSongDto(album.getSongs()));
@@ -81,9 +77,11 @@ public class AlbumService {
 
     public List<AlbumResponse> getAlbums() {
         List<Album> albums = albumRepository.findAll();
-
-
-        return albums.stream().map(album -> new AlbumResponse(album.getAlbumId(), album.getTitle(), album.getYear(), mapToSongDto(album.getSongs()))).toList();
+        return albums.stream().map(album -> new AlbumResponse(
+                album.getAlbumId(),
+                album.getTitle(), album.getYear(),getBand(album.getBandId()),
+                mapToSongDto(album.getSongs()))).
+                toList();
     }
 
     public List<SongResponse> getSongs() {
@@ -123,6 +121,14 @@ public class AlbumService {
         albumDto.setTitle(album.getTitle());
         albumDto.setAlbumId(album.getAlbumId());
         return albumDto;
+    }
+    private BandResponse getBand(String BandId){
+        return webClient.get()
+                .uri("http://"+bandServiceBaseURL+"/api/band",
+                        uriBuilder -> uriBuilder.queryParam("bandID").build())
+                .retrieve()
+                .bodyToMono(BandResponse.class)
+                .block();
     }
 
 }

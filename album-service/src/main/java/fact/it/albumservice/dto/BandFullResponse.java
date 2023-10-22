@@ -4,14 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+
+import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BandMemberDto {
+public class BandFullResponse {
     private String id;
-    private String firstName;
-    private String lastName;
-    private String nickName;
-    private String instrument;
+    private String bandID;
+    private String name;
+    private String nationality;
+    private List<BandMemberDto> bandMembers;
 }

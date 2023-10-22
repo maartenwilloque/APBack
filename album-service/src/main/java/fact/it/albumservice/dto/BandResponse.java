@@ -9,7 +9,6 @@ import org.springframework.data.annotation.Id;
 import java.util.List;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class BandResponse {
@@ -17,5 +16,4 @@ public class BandResponse {
     private String bandID;
     private String name;
     private String nationality;
-    private List<BandMemberDto> bandMembers;
 }
