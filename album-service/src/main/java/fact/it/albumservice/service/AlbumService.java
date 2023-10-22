@@ -124,7 +124,8 @@ public class AlbumService {
     }
     public BandResponse getBand(String Id){
         return webClient.get()
-                .uri("http://"+bandServiceBaseURL+"/api/band",
+                //.uri("http://"+bandServiceBaseURL+"/api/band",
+                .uri("https://band-service-maartenwilloque.cloud.okteto.net/api/band",
                         uriBuilder -> uriBuilder.queryParam("Id", Id).build())
                 .retrieve()
                 .bodyToMono(BandResponse.class)
