@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface BandRepository extends MongoRepository<Band, String> {
 
-    Band findByBandID(String bandId);
+    Band findBandByBandID(String Id);
 }

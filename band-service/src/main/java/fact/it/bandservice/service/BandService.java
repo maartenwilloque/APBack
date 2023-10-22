@@ -25,42 +25,43 @@ public class BandService {
 
     @PostConstruct
     public void init(){
-        Band nirvana = new Band();
-        nirvana.setBandID("NIRVANA");
-        nirvana.setName("Nirvana");
-        nirvana.setNationality("American");
-        nirvana.setBandMemberList(new ArrayList<>());
+        if(bandRepository.count() <= 0) {
+            Band nirvana = new Band();
+            nirvana.setBandID("NIRVANA");
+            nirvana.setName("Nirvana");
+            nirvana.setNationality("American");
+            nirvana.setBandMemberList(new ArrayList<>());
 
-        // Create band members for Nirvana
-        BandMember member1 = new BandMember();
-        member1.setFirstName("Kurt");
-        member1.setLastName("Cobain");
-        member1.setNickName("Kurt");
-        member1.setInstrument("Vocals, Guitar");
+            // Create band members for Nirvana
+            BandMember member1 = new BandMember();
+            member1.setFirstName("Kurt");
+            member1.setLastName("Cobain");
+            member1.setNickName("Kurt");
+            member1.setInstrument("Vocals, Guitar");
 
-        BandMember member2 = new BandMember();
-        member2.setFirstName("Krist");
-        member2.setLastName("Novoselic");
-        member2.setNickName("Krist");
-        member2.setInstrument("Bass");
+            BandMember member2 = new BandMember();
+            member2.setFirstName("Krist");
+            member2.setLastName("Novoselic");
+            member2.setNickName("Krist");
+            member2.setInstrument("Bass");
 
-        BandMember member3 = new BandMember();
-        member3.setFirstName("Dave");
-        member3.setLastName("Grohl");
-        member3.setNickName("Dave");
-        member3.setInstrument("Drums");
+            BandMember member3 = new BandMember();
+            member3.setFirstName("Dave");
+            member3.setLastName("Grohl");
+            member3.setNickName("Dave");
+            member3.setInstrument("Drums");
 
-        // Add band members to the Nirvana band
-        nirvana.getBandMemberList().add(member1);
-        nirvana.getBandMemberList().add(member2);
-        nirvana.getBandMemberList().add(member3);
+            // Add band members to the Nirvana band
+            nirvana.getBandMemberList().add(member1);
+            nirvana.getBandMemberList().add(member2);
+            nirvana.getBandMemberList().add(member3);
 
-        // Save the band and its members to the database
-        bandRepository.save(nirvana);
-        bandMemberRepository.save(member1);
-        bandMemberRepository.save(member2);
-        bandMemberRepository.save(member3);
-
+            // Save the band and its members to the database
+            bandRepository.save(nirvana);
+            bandMemberRepository.save(member1);
+            bandMemberRepository.save(member2);
+            bandMemberRepository.save(member3);
+        }
     }
 
     public List<BandResponse> getBands(){
@@ -69,7 +70,7 @@ public class BandService {
     }
 
     public BandResponse getBand(String Id){
-        Band band = bandRepository.findByBandID(Id);
+        Band band = bandRepository.findBandByBandID(Id);
         BandResponse bandResponse = new BandResponse();
         bandResponse.setBandId(band.getBandID());
         bandResponse.setName(band.getName());
@@ -80,7 +81,7 @@ public class BandService {
     public List<BandMemberResponse> getBandMembers() {
         List<BandMember> bandMembers = bandMemberRepository.findAll();
 
-        return bandMembers.stream().map(bandMember -> new BandMemberResponse(bandMember.getFirstName(),bandMember.getLastName(),bandMember.getNickName(),bandMember.getInstrument()/*,mapToBandDto(bandMember.getBand())*/)).toList();
+        return bandMembers.stream().map(bandMember -> new BandMemberResponse(bandMember.getFirstName(),bandMember.getLastName(),bandMember.getNickName(),bandMember.getInstrument())).toList();
     }
 
     public BandMemberResponse getBandMember(String Id){
@@ -89,7 +90,6 @@ public class BandService {
         bandMemberResponse.setFirstName(bandMember.getFirstName());
         bandMemberResponse.setLastName(bandMember.getLastName());
         bandMemberResponse.setNickName(bandMember.getNickName());
-        //bandMemberResponse.setBand(mapToBandDto(bandMember.getBand()));
         return bandMemberResponse;
     }
 

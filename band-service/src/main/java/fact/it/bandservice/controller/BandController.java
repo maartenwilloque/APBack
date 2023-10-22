@@ -25,7 +25,7 @@ public class BandController {
     @GetMapping("/band/{Id}")
     @ResponseStatus(HttpStatus.OK)
     public BandResponse getBand(@PathVariable("Id") String bandId) {
-        return  bandService.getBand(bandId);
+        return bandService.getBand(bandId);
     }
 
     @GetMapping("/bandmembers")

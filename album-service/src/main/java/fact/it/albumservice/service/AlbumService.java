@@ -26,32 +26,33 @@ public class AlbumService {
 
     @PostConstruct
     public void init() {
-        Album album = new Album();
-        album.setAlbumId("1");
-        album.setYear(1991);
-        album.setTitle("Nevermind");
-        album.setBandId("NIRVANA");
-        albumRepository.save(album);
-        List<Song> songs = new ArrayList<>();
-        Song song = new Song();
-        songs.add(song);
+        if(albumRepository.count()<= 0) {
+            Album album = new Album();
+            album.setAlbumId("1");
+            album.setYear(1991);
+            album.setTitle("Nevermind");
+            album.setBandId("NIRVANA");
+            albumRepository.save(album);
+            List<Song> songs = new ArrayList<>();
+            Song song = new Song();
+            songs.add(song);
 
-        // Load songs into the list
-        songs.add(new Song(1L, "Smells Like Teen Spirit", 299, "spotify-link-1", album));
-        songs.add(new Song(2L, "In Bloom", 251, "spotify-link-2", album));
-        songs.add(new Song(3L, "Come as You Are", 219, "spotify-link-3", album));
-        songs.add(new Song(4L, "Breed", 183, "spotify-link-4", album));
-        songs.add(new Song(5L, "Lithium", 262, "spotify-link-5", album));
-        songs.add(new Song(6L, "Polly", 168, "spotify-link-6", album));
-        songs.add(new Song(7L, "Territorial Pissings", 142, "spotify-link-7", album));
-        songs.add(new Song(8L, "Drain You", 224, "spotify-link-8", album));
-        songs.add(new Song(9L, "Lounge Act", 156, "spotify-link-9", album));
-        songs.add(new Song(10L, "Stay Away", 186, "spotify-link-10", album));
-        songs.add(new Song(11L, "On a Plain", 193, "spotify-link-11", album));
-        songs.add(new Song(12L, "Something in the Way", 224, "spotify-link-12", album));
-        songRepository.saveAll(songs);
+            // Load songs into the list
+            songs.add(new Song(1L, "Smells Like Teen Spirit", 299, "spotify-link-1", album));
+            songs.add(new Song(2L, "In Bloom", 251, "spotify-link-2", album));
+            songs.add(new Song(3L, "Come as You Are", 219, "spotify-link-3", album));
+            songs.add(new Song(4L, "Breed", 183, "spotify-link-4", album));
+            songs.add(new Song(5L, "Lithium", 262, "spotify-link-5", album));
+            songs.add(new Song(6L, "Polly", 168, "spotify-link-6", album));
+            songs.add(new Song(7L, "Territorial Pissings", 142, "spotify-link-7", album));
+            songs.add(new Song(8L, "Drain You", 224, "spotify-link-8", album));
+            songs.add(new Song(9L, "Lounge Act", 156, "spotify-link-9", album));
+            songs.add(new Song(10L, "Stay Away", 186, "spotify-link-10", album));
+            songs.add(new Song(11L, "On a Plain", 193, "spotify-link-11", album));
+            songs.add(new Song(12L, "Something in the Way", 224, "spotify-link-12", album));
+            songRepository.saveAll(songs);
 
-
+        }
     }
 
 
@@ -121,10 +122,10 @@ public class AlbumService {
         albumDto.setAlbumId(album.getAlbumId());
         return albumDto;
     }
-    private BandResponse getBand(String BandId){
+    public BandResponse getBand(String Id){
         return webClient.get()
                 .uri("http://"+bandServiceBaseURL+"/api/band",
-                        uriBuilder -> uriBuilder.queryParam("bandID").build())
+                        uriBuilder -> uriBuilder.queryParam("Id", Id).build())
                 .retrieve()
                 .bodyToMono(BandResponse.class)
                 .block();

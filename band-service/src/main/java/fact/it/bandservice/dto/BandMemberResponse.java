@@ -12,5 +12,4 @@ public class BandMemberResponse {
     private String lastName;
     private String nickName;
     private String instrument;
-    //private BandDto band;
 }
