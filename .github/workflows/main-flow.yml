@@ -84,7 +84,7 @@
 
     apigateway:
       runs-on: ubuntu-latest
-      name: Java 17 build, test, deliver api-gateway container
+      name: the gates are open
       steps:
         - name: Check out repository
           uses: actions/checkout@v3
