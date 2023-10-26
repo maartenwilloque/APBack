@@ -68,6 +68,25 @@ services:
    MYSQL_DB_HOST: mysql-album
    MYSQL_DB_PORT: 3306
 
+ api-gateway:
+   depends_on:
+     - album-service
+     - band-service
+     - user-service
+   image: maartenwilloque/api-gateway
+   ports:
+     - 8083:8083
+   links:
+     - album-service
+     - band-service
+     - user-service
+   environment:
+     BAND_SERVICE_BASEURL: product-service:8080
+     ALBUM_SERVICE_BASEURL: order-service:8081
+     USER_SERVICE_BASEURL: user-service:8082
+
+
+
 volumes:
  mongodb_band_data:
  mysql_user_data:
