@@ -18,6 +18,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "user")
-    private List<Rating> ratings;
+    //@OneToMany(mappedBy = "user")
+    //private List<Rating> ratings;
 }
