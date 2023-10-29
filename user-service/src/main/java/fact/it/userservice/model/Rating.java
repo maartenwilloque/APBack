@@ -18,7 +18,8 @@ public class Rating {
     private Long id;
     private int score;
     private String albumId;
-    @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
+    private String name;
+    //@ManyToOne
+    //@JoinColumn(name = "userId")
+    //private User user;
 }

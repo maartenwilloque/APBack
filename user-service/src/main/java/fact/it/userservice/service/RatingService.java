@@ -1,5 +1,6 @@
 package fact.it.userservice.service;
 
+import fact.it.userservice.dto.RatingRequest;
 import fact.it.userservice.dto.RatingResponse;
 import fact.it.userservice.model.Rating;
 import fact.it.userservice.repository.RatingRepository;
@@ -18,6 +19,14 @@ public class RatingService {
     public RatingResponse getAverageRating(String albumId){
         double averageScore =  ratingRepository.findAll().stream().filter(rating -> rating.getAlbumId().equals(albumId)).collect(Collectors.averagingInt(Rating::getScore));
         return RatingResponse.builder().albumId(albumId).score(averageScore).build();
+        }
+
+        public void saveRating(RatingRequest ratingRequest){
+        Rating rating = new Rating();
+        rating.setName(ratingRequest.getName());
+        rating.setAlbumId(ratingRequest.getAlbumId());
+        rating.setScore(ratingRequest.getScore());
+        ratingRepository.save(rating);
         }
     }
 
