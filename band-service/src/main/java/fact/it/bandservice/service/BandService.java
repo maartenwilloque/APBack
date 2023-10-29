@@ -60,6 +60,44 @@ public class BandService {
             bandMemberRepository.save(member1);
             bandMemberRepository.save(member2);
             bandMemberRepository.save(member3);
+
+            Band blink182 = new Band();
+            blink182.setBandID("BLINK182");
+            blink182.setName("Blink 182");
+            blink182.setNationality("American");
+            blink182.setBandMemberList(new ArrayList<>());
+
+            // Create band members for Nirvana
+            BandMember member4 = new BandMember();
+            member4.setFirstName("Mark");
+            member4.setLastName("Hoppus");
+            member4.setNickName("Mark");
+            member4.setInstrument("Vocals, Bass");
+
+            BandMember member5 = new BandMember();
+            member5.setFirstName("Tom");
+            member5.setLastName("SeLonge");
+            member5.setNickName("Tom");
+            member5.setInstrument("Vocals, Guitar");
+
+            BandMember member6 = new BandMember();
+            member6.setFirstName("Travis");
+            member6.setLastName("Barker");
+            member6.setNickName("Travis");
+            member6.setInstrument("Drums");
+
+            // Add band members to the Nirvana band
+            blink182.getBandMemberList().add(member4);
+            blink182.getBandMemberList().add(member5);
+            blink182.getBandMemberList().add(member6);
+
+            // Save the band and its members to the database
+            bandRepository.save(blink182);
+            bandMemberRepository.save(member4);
+            bandMemberRepository.save(member5);
+            bandMemberRepository.save(member6);
+
+
         }
     }
 
