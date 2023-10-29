@@ -16,5 +16,6 @@ public class AlbumResponse {
     private int Year;
     private BandResponse band;
     private List<SongDto> songs;
+    private double rating;
 
 }

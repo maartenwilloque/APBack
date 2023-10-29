@@ -70,6 +70,8 @@ public class AlbumService {
         albumResponse.setYear(album.getYear());
         albumResponse.setTitle(album.getTitle());
         albumResponse.setSongs(mapToSongDto(album.getSongs()));
+        albumResponse.setRating(getAverageRating(album.getAlbumId()).getScore());
+
 
 
         return albumResponse;
@@ -80,7 +82,7 @@ public class AlbumService {
         return albums.stream().map(album -> new AlbumResponse(
                 album.getAlbumId(),
                 album.getTitle(), album.getYear(),getBand(album.getBandId()),
-                mapToSongDto(album.getSongs()))).
+                mapToSongDto(album.getSongs()), getAverageRating(album.getAlbumId()).getScore())).
                 toList();
     }
 
@@ -97,6 +99,10 @@ public class AlbumService {
         songResponse.setSpotifyId(song.getSpotifyId());
         songResponse.setAlbum(mapToAlbumDto(song.getAlbum()));
         return songResponse;
+    }
+
+    public  RatingResponse getAverageRating(String albumId){
+        return webClient.get().uri("http://"+userServiceBaseUrl+"/api/rating/average/{Id}",albumId).retrieve().bodyToMono(RatingResponse.class).block();
     }
 
 

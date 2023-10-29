@@ -11,5 +11,4 @@ import lombok.NoArgsConstructor;
 @Builder
 public class RatingResponse {
     private double score;
-    private String albumId;
 }
