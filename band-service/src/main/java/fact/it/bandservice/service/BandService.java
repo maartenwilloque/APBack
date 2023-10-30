@@ -61,41 +61,93 @@ public class BandService {
             bandMemberRepository.save(member2);
             bandMemberRepository.save(member3);
 
-            Band blink182 = new Band();
-            blink182.setBandID("BLINK182");
-            blink182.setName("Blink 182");
-            blink182.setNationality("American");
-            blink182.setBandMemberList(new ArrayList<>());
+            Band live = new Band();
+            live.setBandID("LIVE");
+            live.setName("Live");
+            live.setNationality("American");
+            live.setBandMemberList(new ArrayList<>());
 
             // Create band members for Nirvana
             BandMember member4 = new BandMember();
-            member4.setFirstName("Mark");
-            member4.setLastName("Hoppus");
-            member4.setNickName("Mark");
-            member4.setInstrument("Vocals, Bass");
+            member4.setFirstName("Ed");
+            member4.setLastName("Kowalczyk");
+            member4.setNickName("Ed");
+            member4.setInstrument("Vocals");
 
             BandMember member5 = new BandMember();
-            member5.setFirstName("Tom");
-            member5.setLastName("SeLonge");
-            member5.setNickName("Tom");
-            member5.setInstrument("Vocals, Guitar");
+            member5.setFirstName("Chad");
+            member5.setLastName("Taylor");
+            member5.setNickName("Chad");
+            member5.setInstrument("Guitar");
 
             BandMember member6 = new BandMember();
-            member6.setFirstName("Travis");
-            member6.setLastName("Barker");
-            member6.setNickName("Travis");
+            member6.setFirstName("Chad");
+            member6.setLastName("Gracey");
+            member6.setNickName("Chad");
             member6.setInstrument("Drums");
 
+            BandMember member7 = new BandMember();
+            member6.setFirstName("Patrick");
+            member6.setLastName("Dahlheimer");
+            member6.setNickName("Patrick");
+            member6.setInstrument("Bass");
+
             // Add band members to the Nirvana band
-            blink182.getBandMemberList().add(member4);
-            blink182.getBandMemberList().add(member5);
-            blink182.getBandMemberList().add(member6);
+            live.getBandMemberList().add(member4);
+            live.getBandMemberList().add(member5);
+            live.getBandMemberList().add(member6);
+            live.getBandMemberList().add(member7);
 
             // Save the band and its members to the database
-            bandRepository.save(blink182);
+            bandRepository.save(live);
             bandMemberRepository.save(member4);
             bandMemberRepository.save(member5);
             bandMemberRepository.save(member6);
+            bandMemberRepository.save(member7);
+
+            Band metallica = new Band();
+            metallica.setBandID("METALLICA");
+            metallica.setName("Metallica");
+            metallica.setNationality("American");
+            metallica.setBandMemberList(new ArrayList<>());
+
+            // Create band members for Nirvana
+            BandMember member8 = new BandMember();
+            member4.setFirstName("James");
+            member4.setLastName("Hetfield");
+            member4.setNickName("James");
+            member4.setInstrument("Vocals, Guitar");
+
+            BandMember member9 = new BandMember();
+            member5.setFirstName("Lars");
+            member5.setLastName("Ulrich");
+            member5.setNickName("Lars");
+            member5.setInstrument("Drums");
+
+            BandMember member10 = new BandMember();
+            member6.setFirstName("Kirk");
+            member6.setLastName("Hammet");
+            member6.setNickName("Kirk");
+            member6.setInstrument("Guitar");
+
+            BandMember member11 = new BandMember();
+            member6.setFirstName("Robert");
+            member6.setLastName("Truijllo");
+            member6.setNickName("Robert");
+            member6.setInstrument("Bass");
+
+            // Add band members to the Nirvana band
+            metallica.getBandMemberList().add(member8);
+            metallica.getBandMemberList().add(member9);
+            metallica.getBandMemberList().add(member10);
+            metallica.getBandMemberList().add(member11);
+
+            // Save the band and its members to the database
+            bandRepository.save(metallica);
+            bandMemberRepository.save(member4);
+            bandMemberRepository.save(member5);
+            bandMemberRepository.save(member6);
+            bandMemberRepository.save(member9);
 
 
         }

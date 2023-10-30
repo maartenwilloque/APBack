@@ -55,50 +55,50 @@ public class AlbumService {
 
             Album album1 = new Album();
             album1.setAlbumId("2");
-            album1.setYear(1989);
-            album1.setTitle("Bleach");
-            album1.setBandId("NIRVANA");
+            album1.setYear(1999);
+            album1.setTitle("The Distance to Here");
+            album1.setBandId("LIVE");
             albumRepository.save(album1);
             List<Song> songs1 = new ArrayList<>();
             Song song1 = new Song();
             songs1.add(song1);
 
             // Load songs into the list
-            songs1.add(new Song(13L, "Blew", 166, "spotify-blew", album1));
-            songs1.add(new Song(14L, "Floyd the Barber", 120, "spotify-floyd", album1));
-            songs1.add(new Song(15L, "About a Girl", 166, "spotify-about-a-girl", album1));
-            songs1.add(new Song(16L, "School", 138, "spotify-school", album1));
-            songs1.add(new Song(17L, "Love Buzz", 178, "spotify-love-buzz", album1));
-            songs1.add(new Song(18L, "Paper Cuts", 206, "spotify-paper-cuts", album1));
-            songs1.add(new Song(19L, "Negative Creep", 134, "spotify-negative-creep", album1));
-            songs1.add(new Song(20L, "Scoff", 136, "spotify-scoff", album1));
-            songs1.add(new Song(21L, "Swap Meet", 143, "spotify-swap-meet", album1));
-            songs1.add(new Song(22L, "Mr. Moustache", 130, "spotify-mr-moustache", album1));
-            songs1.add(new Song(23L, "Sifting", 191, "spotify-sifting", album1));
+            songs1.add(new Song(13L, "The Dolphin's Cry", 241, "spotify_id_1", album1));
+            songs1.add(new Song(14L, "The Distance", 258, "spotify_id_2", album1));
+            songs1.add(new Song(15L, "Sparkle", 212, "spotify_id_3", album1));
+            songs1.add(new Song(16L, "Run to the Water", 244, "spotify_id_4", album1));
+            songs1.add(new Song(17L, "Sun", 225, "spotify_id_5", album1));
+            songs1.add(new Song(18L, "Voodoo Lady", 199, "spotify_id_6", album1));
+            songs1.add(new Song(19L, "Where Fishes Go", 248, "spotify_id_7", album1));
+            songs1.add(new Song(20L, "Face and Ghost (The Children's Song)", 268, "spotify_id_8", album1));
+            songs1.add(new Song(21L, "Feel the Quiet River Rage", 211, "spotify_id_9", album1));
+            songs1.add(new Song(22L, "Meltdown", 236, "spotify_id_10", album1));
+            songs1.add(new Song(23L, "They Stood Up for Love", 277, "spotify_id_11", album1));
+            songs1.add(new Song(24L, "We Walk in the Dream", 233, "spotify_id_12", album1));
+            songs1.add(new Song(25L, "Dance with You", 278, "spotify_id_13", album1));
             songRepository.saveAll(songs1);
 
 
             Album album2 = new Album();
             album2.setAlbumId("3");
-            album2.setYear(1999);
-            album2.setTitle("Enema of the State");
-            album2.setBandId("BLINK182");
+            album2.setYear(1986);
+            album2.setTitle("Master of Puppets");
+            album2.setBandId("METALLICA");
             albumRepository.save(album2);
             List<Song> songs2 = new ArrayList<>();
             Song song2 = new Song();
             songs2.add(song2);
 
-            songs2.add(new Song(24L, "Dumpweed", 161, "spotify:track:xyz123", album2));
-            songs2.add(new Song(25L, "Don't Leave Me", 144, "spotify:track:xyz124", album2));
-            songs2.add(new Song(26L, "Aliens Exist", 182, "spotify:track:xyz125", album2));
-            songs2.add(new Song(27L, "Going Away to College", 185, "spotify:track:xyz126", album2));
-            songs2.add(new Song(28L, "What's My Age Again?", 149, "spotify:track:xyz127", album2));
-            songs2.add(new Song(29L, "Dysentery Gary", 122, "spotify:track:xyz128", album2));
-            songs2.add(new Song(30L, "Adam's Song", 243, "spotify:track:xyz129", album2));
-            songs2.add(new Song(31L, "All the Small Things", 186, "spotify:track:xyz130", album2));
-            songs2.add(new Song(32L, "The Party Song", 135, "spotify:track:xyz131", album2));
-            songs2.add(new Song(33L, "Mutt", 123, "spotify:track:xyz132", album2));
-            songs2.add(new Song(34L, "Wendy Clear", 144, "spotify:track:xyz133", album2));
+            songs2.add(new Song(26L, "Battery", 312, "spotify-id-1", album2));
+            songs2.add(new Song(27L, "Master of Puppets", 442, "spotify-id-2", album2));
+            songs2.add(new Song(28L, "The Thing That Should Not Be", 398, "spotify-id-3", album2));
+            songs2.add(new Song(29L, "Welcome Home (Sanitarium)", 387, "spotify-id-4", album2));
+            songs2.add(new Song(30L, "Disposable Heroes", 496, "spotify-id-5", album2));
+            songs2.add(new Song(31L, "Leper Messiah", 342, "spotify-id-6", album2));
+            songs2.add(new Song(32L, "Orion", 496, "spotify-id-7", album2));
+            songs2.add(new Song(33L, "Damage, Inc.", 332, "spotify-id-8", album2));
+
 
             songRepository.saveAll(songs2);
 
