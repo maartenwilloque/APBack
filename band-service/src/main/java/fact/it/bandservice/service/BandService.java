@@ -87,10 +87,10 @@ public class BandService {
             member6.setInstrument("Drums");
 
             BandMember member7 = new BandMember();
-            member6.setFirstName("Patrick");
-            member6.setLastName("Dahlheimer");
-            member6.setNickName("Patrick");
-            member6.setInstrument("Bass");
+            member7.setFirstName("Patrick");
+            member7.setLastName("Dahlheimer");
+            member7.setNickName("Patrick");
+            member7.setInstrument("Bass");
 
             // Add band members to the Nirvana band
             live.getBandMemberList().add(member4);
@@ -113,28 +113,28 @@ public class BandService {
 
             // Create band members for Nirvana
             BandMember member8 = new BandMember();
-            member4.setFirstName("James");
-            member4.setLastName("Hetfield");
-            member4.setNickName("James");
-            member4.setInstrument("Vocals, Guitar");
+            member8.setFirstName("James");
+            member8.setLastName("Hetfield");
+            member8.setNickName("James");
+            member8.setInstrument("Vocals, Guitar");
 
             BandMember member9 = new BandMember();
-            member5.setFirstName("Lars");
-            member5.setLastName("Ulrich");
-            member5.setNickName("Lars");
-            member5.setInstrument("Drums");
+            member9.setFirstName("Lars");
+            member9.setLastName("Ulrich");
+            member9.setNickName("Lars");
+            member9.setInstrument("Drums");
 
             BandMember member10 = new BandMember();
-            member6.setFirstName("Kirk");
-            member6.setLastName("Hammet");
-            member6.setNickName("Kirk");
-            member6.setInstrument("Guitar");
+            member10.setFirstName("Kirk");
+            member10.setLastName("Hammet");
+            member10.setNickName("Kirk");
+            member10.setInstrument("Guitar");
 
             BandMember member11 = new BandMember();
-            member6.setFirstName("Robert");
-            member6.setLastName("Truijllo");
-            member6.setNickName("Robert");
-            member6.setInstrument("Bass");
+            member11.setFirstName("Robert");
+            member11.setLastName("Truijllo");
+            member11.setNickName("Robert");
+            member11.setInstrument("Bass");
 
             // Add band members to the Nirvana band
             metallica.getBandMemberList().add(member8);
@@ -144,10 +144,10 @@ public class BandService {
 
             // Save the band and its members to the database
             bandRepository.save(metallica);
-            bandMemberRepository.save(member4);
-            bandMemberRepository.save(member5);
-            bandMemberRepository.save(member6);
+            bandMemberRepository.save(member8);
             bandMemberRepository.save(member9);
+            bandMemberRepository.save(member10);
+            bandMemberRepository.save(member11);
 
 
         }
