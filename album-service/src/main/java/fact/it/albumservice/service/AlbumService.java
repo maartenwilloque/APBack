@@ -376,7 +376,8 @@ public class AlbumService {
     }
 
     public BandWithAlbumResponse getBandWithAlbum(String bandId){
-        List<AlbumDto> albums = albumRepository.findAll().stream().filter(album -> album.getBandId().equals(bandId)).map(a -> new AlbumDto(a.getAlbumId(), a.getTitle(),a.getYear())).toList();
+        List<Album> albumsList = albumRepository.findAll().stream().filter(album -> album.getBandId().equals(bandId)).toList();
+        List<AlbumDto> albums = albumsList.stream().map(album -> new AlbumDto(album.getAlbumId(),album.getTitle(),album.getYear())).toList();
         BandResponse band = getBand(bandId);
 
         BandWithAlbumResponse band1 = new BandWithAlbumResponse();
