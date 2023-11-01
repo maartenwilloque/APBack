@@ -105,10 +105,10 @@ public class AlbumService {
 
 
             Album album3 = new Album();
-            album2.setAlbumId("4");
-            album2.setYear(1991);
-            album2.setTitle("Metallica");
-            album2.setBandId("METALLICA");
+            album3.setAlbumId("4");
+            album3.setYear(1991);
+            album3.setTitle("Metallica");
+            album3.setBandId("METALLICA");
 
             albumRepository.save(album3);
 
@@ -127,10 +127,10 @@ public class AlbumService {
             songRepository.saveAll(songs3);
 
             Album album4 = new Album();
-            album2.setAlbumId("5");
-            album2.setYear(1999); // Set the release year of the "There Is Nothing Left to Lose" album
-            album2.setTitle("There Is Nothing Left to Lose"); // Set the album title
-            album2.setBandId("FOOFIGHTERS"); // Set the band ID
+            album4.setAlbumId("5");
+            album4.setYear(1999); // Set the release year of the "There Is Nothing Left to Lose" album
+            album4.setTitle("There Is Nothing Left to Lose"); // Set the album title
+            album4.setBandId("FOOFIGHTERS"); // Set the band ID
 
 // Save the album object using the albumRepository
             albumRepository.save(album2);
@@ -155,10 +155,10 @@ public class AlbumService {
             songRepository.saveAll(songs4);
 
             Album album5 = new Album();
-            album2.setAlbumId("6");
-            album2.setYear(2002); // Set the release year of the "One by One" album
-            album2.setTitle("One by One"); // Set the album title
-            album2.setBandId("FOOFIGHTERS"); // Set the band ID
+            album5.setAlbumId("6");
+            album5.setYear(2002); // Set the release year of the "One by One" album
+            album5.setTitle("One by One"); // Set the album title
+            album5.setBandId("FOOFIGHTERS"); // Set the band ID
 
 // Save the album object using the albumRepository
             albumRepository.save(album5);
@@ -183,10 +183,10 @@ public class AlbumService {
             songRepository.saveAll(songs5);
 
             Album album6 = new Album();
-            album3.setAlbumId("7");
-            album3.setYear(2005); // Set the release year of the "In Your Honor" album
-            album3.setTitle("In Your Honor"); // Set the album title
-            album3.setBandId("FOOFIGHTERS"); // Set the band ID
+            album6.setAlbumId("7");
+            album6.setYear(2005); // Set the release year of the "In Your Honor" album
+            album6.setTitle("In Your Honor"); // Set the album title
+            album6.setBandId("FOOFIGHTERS"); // Set the band ID
 
 // Save the album object using the albumRepository
             albumRepository.save(album6);
@@ -212,10 +212,10 @@ public class AlbumService {
 
             // Create an instance of the Album class and set its properties
             Album album7 = new Album();
-            album4.setAlbumId("8");
-            album4.setYear(1999); // Set the release year of the "Californication" album
-            album4.setTitle("Californication"); // Set the album title
-            album4.setBandId("REDHOTCHILIPEPPERS"); // Set the band ID
+            album7.setAlbumId("8");
+            album7.setYear(1999); // Set the release year of the "Californication" album
+            album7.setTitle("Californication"); // Set the album title
+            album7.setBandId("REDHOTCHILIPEPPERS"); // Set the band ID
 
 // Save the album object using the albumRepository
             albumRepository.save(album7);
