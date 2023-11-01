@@ -2,6 +2,7 @@ package fact.it.albumservice.controller;
 
 import fact.it.albumservice.dto.AlbumResponse;
 import fact.it.albumservice.dto.BandResponse;
+import fact.it.albumservice.dto.BandWithAlbumResponse;
 import fact.it.albumservice.dto.SongResponse;
 import fact.it.albumservice.model.Album;
 import fact.it.albumservice.model.Song;
@@ -39,5 +40,5 @@ public class AlbumController {
 
     @GetMapping("/band/{Id}")
     @ResponseStatus(HttpStatus.OK)
-    public BandResponse getBand(@PathVariable("Id") String Id){ return albumService.getBand(Id);}
+    public BandWithAlbumResponse getBand(@PathVariable("Id") String Id){ return albumService.getBandWithAlbum(Id);}
 }

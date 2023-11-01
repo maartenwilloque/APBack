@@ -15,6 +15,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -374,6 +375,18 @@ public class AlbumService {
         return webClient.get().uri("http://"+userServiceBaseUrl+"/api/rating/average/{Id}",albumId).retrieve().bodyToMono(RatingResponse.class).block();
     }
 
+    public BandWithAlbumResponse getBandWithAlbum(String bandId){
+        List<AlbumDto> albums = albumRepository.findAll().stream().filter(album -> album.getBandId().equals(bandId)).map(a -> new AlbumDto(a.getAlbumId(), a.getTitle(),a.getYear())).toList();
+        BandResponse band = getBand(bandId);
+
+        BandWithAlbumResponse band1 = new BandWithAlbumResponse();
+        band1.setAlbums(albums);
+        band1.setNationality(band.getNationality());
+        band1.setBandId(band.getBandId());
+        band1.setMembers(band.getMembers());
+        return band1;
+    }
+
 
     private List<SongDto> mapToSongDto(List<Song> songs) {
         return songs.stream().map(song -> new SongDto(
@@ -397,7 +410,7 @@ public class AlbumService {
         albumDto.setAlbumId(album.getAlbumId());
         return albumDto;
     }
-    public BandResponse getBand(String Id){
+    private BandResponse getBand(String Id){
         return webClient.get()
                 .uri("http://"+bandServiceBaseURL+"/api/band/{Id}",Id)
                 .retrieve()
