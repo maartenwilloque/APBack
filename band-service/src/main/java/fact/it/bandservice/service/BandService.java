@@ -67,7 +67,6 @@ public class BandService {
             live.setNationality("American");
             live.setBandMemberList(new ArrayList<>());
 
-            // Create band members for Nirvana
             BandMember member4 = new BandMember();
             member4.setFirstName("Ed");
             member4.setLastName("Kowalczyk");
@@ -92,13 +91,11 @@ public class BandService {
             member7.setNickName("Patrick");
             member7.setInstrument("Bass");
 
-            // Add band members to the Nirvana band
             live.getBandMemberList().add(member4);
             live.getBandMemberList().add(member5);
             live.getBandMemberList().add(member6);
             live.getBandMemberList().add(member7);
 
-            // Save the band and its members to the database
             bandRepository.save(live);
             bandMemberRepository.save(member4);
             bandMemberRepository.save(member5);
@@ -149,7 +146,98 @@ public class BandService {
             bandMemberRepository.save(member10);
             bandMemberRepository.save(member11);
 
+// Create a Band object and set its properties
+            Band fooFighters = new Band();
+            fooFighters.setBandID("FOOFIGHTERS");
+            fooFighters.setName("Foo Fighters");
+            fooFighters.setNationality("American");
+            fooFighters.setBandMemberList(new ArrayList<>());
 
+// Create BandMember objects for the band
+            BandMember member12 = new BandMember();
+            member1.setFirstName("Dave");
+            member1.setLastName("Grohl");
+            member1.setNickName("Dave");
+            member1.setInstrument("Vocals, Guitar, Drums");
+
+            BandMember member13 = new BandMember();
+            member2.setFirstName("Nate");
+            member2.setLastName("Mendel");
+            member2.setNickName("Nate");
+            member2.setInstrument("Bass");
+
+            BandMember member14 = new BandMember();
+            member3.setFirstName("Chris");
+            member3.setLastName("Shiflett");
+            member3.setNickName("Chris");
+            member3.setInstrument("Guitar");
+
+            BandMember member15 = new BandMember();
+            member4.setFirstName("Rami");
+            member4.setLastName("Jaffee");
+            member4.setNickName("Rami");
+            member4.setInstrument("Keyboards");
+
+// Add BandMember objects to the Foo Fighters' member list
+            fooFighters.getBandMemberList().add(member12);
+            fooFighters.getBandMemberList().add(member13);
+            fooFighters.getBandMemberList().add(member14);
+            fooFighters.getBandMemberList().add(member15);
+
+// Save the Foo Fighters' Band object to the bandRepository
+            bandRepository.save(fooFighters);
+
+// Save each BandMember object to the bandMemberRepository
+            bandMemberRepository.save(member12);
+            bandMemberRepository.save(member13);
+            bandMemberRepository.save(member14);
+            bandMemberRepository.save(member15);
+
+            Band redHotChiliPeppers = new Band();
+            redHotChiliPeppers.setBandID("REDHOTCHILIPEPPERS");
+            redHotChiliPeppers.setName("Red Hot Chili Peppers");
+            redHotChiliPeppers.setNationality("American");
+            redHotChiliPeppers.setBandMemberList(new ArrayList<>());
+
+// Create BandMember objects for the band
+            BandMember member16 = new BandMember();
+            member1.setFirstName("Anthony");
+            member1.setLastName("Kiedis");
+            member1.setNickName("Anthony");
+            member1.setInstrument("Vocals");
+
+            BandMember member17 = new BandMember();
+            member2.setFirstName("Flea");
+            member2.setLastName("Balzary");
+            member2.setNickName("Flea");
+            member2.setInstrument("Bass");
+
+            BandMember member18 = new BandMember();
+            member3.setFirstName("John");
+            member3.setLastName("Frusciante");
+            member3.setNickName("John");
+            member3.setInstrument("Guitar");
+
+            BandMember member19 = new BandMember();
+            member4.setFirstName("Chad");
+            member4.setLastName("Smith");
+            member4.setNickName("Chad");
+            member4.setInstrument("Drums");
+
+// Add BandMember objects to the Red Hot Chili Peppers' member list
+            redHotChiliPeppers.getBandMemberList().add(member16);
+            redHotChiliPeppers.getBandMemberList().add(member17);
+            redHotChiliPeppers.getBandMemberList().add(member18);
+            redHotChiliPeppers.getBandMemberList().add(member19);
+
+// Save the Red Hot Chili Peppers' Band object to the bandRepository
+            bandRepository.save(redHotChiliPeppers);
+
+// Save each BandMember object to the bandMemberRepository
+            bandMemberRepository.save(member16);
+            bandMemberRepository.save(member17);
+            bandMemberRepository.save(member18);
+            bandMemberRepository.save(member19);
         }
     }
 
