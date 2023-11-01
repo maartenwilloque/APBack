@@ -352,6 +352,7 @@ public class AlbumService {
 
         BandWithAlbumResponse band1 = new BandWithAlbumResponse();
         band1.setAlbums(albums);
+        band1.setName(band.getName());
         band1.setNationality(band.getNationality());
         band1.setBandId(band.getBandId());
         band1.setMembers(band.getMembers());
