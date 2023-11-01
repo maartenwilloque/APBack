@@ -100,9 +100,7 @@ public class AlbumService {
             songs2.add(new Song(32L, "Orion", 496, "spotify-id-7", album2));
             songs2.add(new Song(33L, "Damage, Inc.", 332, "spotify-id-8", album2));
 
-
             songRepository.saveAll(songs2);
-
 
             Album album3 = new Album();
             album3.setAlbumId("4");
@@ -123,7 +121,6 @@ public class AlbumService {
             songs3.add(new Song(40L, "The God That Failed", 305, "spotify-id-7", album3));
             songs3.add(new Song(41L, "My Friend of Misery", 427, "spotify-id-8", album3));
 
-// Save all the Song objects in the songRepository
             songRepository.saveAll(songs3);
 
             Album album4 = new Album();
@@ -132,13 +129,10 @@ public class AlbumService {
             album4.setTitle("There Is Nothing Left to Lose"); // Set the album title
             album4.setBandId("FOOFIGHTERS"); // Set the band ID
 
-// Save the album object using the albumRepository
-            albumRepository.save(album2);
+            albumRepository.save(album4);
 
-// Create a list of Song objects for the "There Is Nothing Left to Lose" album
             List<Song> songs4 = new ArrayList<>();
 
-// Create Song objects and add them to the list
             songs4.add(new Song(42L, "Stacked Actors", 254, "spotify-id-9", album4));
             songs4.add(new Song(43L, "Breakout", 203, "spotify-id-10", album4));
             songs4.add(new Song(44L, "Learn to Fly", 230, "spotify-id-11", album4));
@@ -151,22 +145,18 @@ public class AlbumService {
             songs4.add(new Song(51L, "Ain't It the Life", 268, "spotify-id-18", album4));
             songs4.add(new Song(52L, "M.I.A.", 259, "spotify-id-19", album4));
 
-// Save all the Song objects in the songRepository
             songRepository.saveAll(songs4);
 
             Album album5 = new Album();
             album5.setAlbumId("6");
-            album5.setYear(2002); // Set the release year of the "One by One" album
-            album5.setTitle("One by One"); // Set the album title
-            album5.setBandId("FOOFIGHTERS"); // Set the band ID
+            album5.setYear(2002);
+            album5.setTitle("One by One");
+            album5.setBandId("FOOFIGHTERS");
 
-// Save the album object using the albumRepository
             albumRepository.save(album5);
 
-// Create a list of Song objects for the "One by One" album
             List<Song> songs5 = new ArrayList<>();
 
-// Create Song objects and add them to the list
             songs5.add(new Song(53L, "All My Life", 263, "spotify-id-20", album5));
             songs5.add(new Song(54L, "Low", 290, "spotify-id-21", album5));
             songs5.add(new Song(55L, "Have It All", 284, "spotify-id-22", album5));
@@ -179,22 +169,18 @@ public class AlbumService {
             songs5.add(new Song(62L, "Burn Away", 273, "spotify-id-29", album5));
             songs5.add(new Song(63L, "Come Back", 347, "spotify-id-30", album5));
 
-// Save all the Song objects in the songRepository
             songRepository.saveAll(songs5);
 
             Album album6 = new Album();
             album6.setAlbumId("7");
-            album6.setYear(2005); // Set the release year of the "In Your Honor" album
-            album6.setTitle("In Your Honor"); // Set the album title
-            album6.setBandId("FOOFIGHTERS"); // Set the band ID
+            album6.setYear(2005);
+            album6.setTitle("In Your Honor");
+            album6.setBandId("FOOFIGHTERS");
 
-// Save the album object using the albumRepository
             albumRepository.save(album6);
 
-// Create a list of Song objects for the "In Your Honor" album
             List<Song> songs6 = new ArrayList<>();
 
-// Create Song objects and add them to the list
             songs6.add(new Song(56L, "In Your Honor", 245, "spotify-id-31", album6));
             songs6.add(new Song(57L, "No Way Back", 198, "spotify-id-32", album6));
             songs6.add(new Song(58L, "Best of You", 267, "spotify-id-33", album6));
@@ -206,24 +192,18 @@ public class AlbumService {
             songs6.add(new Song(64L, "The Deepest Blues Are Black", 234, "spotify-id-39", album6));
             songs6.add(new Song(65L, "End Over End", 303, "spotify-id-40", album6));
 
-// Save all the Song objects in the songRepository
             songRepository.saveAll(songs6);
 
-
-            // Create an instance of the Album class and set its properties
             Album album7 = new Album();
             album7.setAlbumId("8");
-            album7.setYear(1999); // Set the release year of the "Californication" album
-            album7.setTitle("Californication"); // Set the album title
-            album7.setBandId("REDHOTCHILIPEPPERS"); // Set the band ID
+            album7.setYear(1999);
+            album7.setTitle("Californication");
+            album7.setBandId("REDHOTCHILIPEPPERS");
 
-// Save the album object using the albumRepository
             albumRepository.save(album7);
 
-// Create a list of Song objects for the "Californication" album starting with song ID 66L
             List<Song> songs7 = new ArrayList<>();
 
-// Create Song objects and add them to the list, starting with ID 66L
             songs7.add(new Song(66L, "Around the World", 238, "spotify-id-41", album7));
             songs7.add(new Song(67L, "Parallel Universe", 259, "spotify-id-42", album7));
             songs7.add(new Song(68L, "Scar Tissue", 205, "spotify-id-43", album7));
@@ -240,22 +220,18 @@ public class AlbumService {
             songs7.add(new Song(79L, "Right on Time", 167, "spotify-id-54", album7));
             songs7.add(new Song(80L, "Road Trippin'", 222, "spotify-id-55", album7));
 
-// Save all the Song objects in the songRepository
             songRepository.saveAll(songs7);
 
             Album album8 = new Album();
             album8.setAlbumId("9");
-            album8.setYear(2002); // Set the release year of the "By the Way" album
-            album8.setTitle("By the Way"); // Set the album title
-            album8.setBandId("REDHOTCHILIPEPPERS"); // Set the band ID
+            album8.setYear(2002);
+            album8.setTitle("By the Way");
+            album8.setBandId("REDHOTCHILIPEPPERS");
 
-// Save the album object using the albumRepository
             albumRepository.save(album8);
 
-// Create a list of Song objects for the "By the Way" album
             List<Song> songs8 = new ArrayList<>();
 
-// Create Song objects and add them to the list, starting with ID 81L
             songs8.add(new Song(81L, "By the Way", 216, "spotify-id-56", album8));
             songs8.add(new Song(82L, "Universally Speaking", 249, "spotify-id-57", album8));
             songs8.add(new Song(83L, "This Is the Place", 242, "spotify-id-58", album8));
@@ -273,23 +249,18 @@ public class AlbumService {
             songs8.add(new Song(95L, "Warm Tape", 234, "spotify-id-70", album8));
             songs8.add(new Song(96L, "Venice Queen", 413, "spotify-id-71", album8));
 
-// Save all the Song objects in the songRepository
             songRepository.saveAll(songs8);
 
-            // Create an instance of the Album class and set its properties
             Album album9 = new Album();
             album9.setAlbumId("10");
-            album9.setYear(2006); // Set the release year of the "Stadium Arcadium" album
-            album9.setTitle("Stadium Arcadium"); // Set the album title
-            album9.setBandId("REDHOTCHILIPEPPERS"); // Set the band ID
+            album9.setYear(2006);
+            album9.setTitle("Stadium Arcadium");
+            album9.setBandId("REDHOTCHILIPEPPERS");
 
-// Save the album object using the albumRepository
             albumRepository.save(album9);
 
-// Create a list of Song objects for the "Stadium Arcadium" album
             List<Song> songs9 = new ArrayList<>();
 
-// Create Song objects and add them to the list, starting with ID 97L
             songs9.add(new Song(97L, "Dani California", 243, "spotify-id-72", album9));
             songs9.add(new Song(98L, "Snow (Hey Oh)", 330, "spotify-id-73", album9));
             songs9.add(new Song(99L, "Charlie", 234, "spotify-id-74", album9));
@@ -319,7 +290,6 @@ public class AlbumService {
             songs9.add(new Song(123L, "Turn It Again", 225, "spotify-id-98", album9));
             songs9.add(new Song(124L, "Death of a Martian", 229, "spotify-id-99", album9));
 
-// Save all the Song objects in the songRepository
             songRepository.saveAll(songs9);
         }
     }
