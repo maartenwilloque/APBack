@@ -155,28 +155,28 @@ public class BandService {
 
 // Create BandMember objects for the band
             BandMember member12 = new BandMember();
-            member1.setFirstName("Dave");
-            member1.setLastName("Grohl");
-            member1.setNickName("Dave");
-            member1.setInstrument("Vocals, Guitar, Drums");
+            member12.setFirstName("Dave");
+            member12.setLastName("Grohl");
+            member12.setNickName("Dave");
+            member12.setInstrument("Vocals, Guitar, Drums");
 
             BandMember member13 = new BandMember();
-            member2.setFirstName("Nate");
-            member2.setLastName("Mendel");
-            member2.setNickName("Nate");
-            member2.setInstrument("Bass");
+            member13.setFirstName("Nate");
+            member13.setLastName("Mendel");
+            member13.setNickName("Nate");
+            member13.setInstrument("Bass");
 
             BandMember member14 = new BandMember();
-            member3.setFirstName("Chris");
-            member3.setLastName("Shiflett");
-            member3.setNickName("Chris");
-            member3.setInstrument("Guitar");
+            member14.setFirstName("Chris");
+            member14.setLastName("Shiflett");
+            member14.setNickName("Chris");
+            member14.setInstrument("Guitar");
 
             BandMember member15 = new BandMember();
-            member4.setFirstName("Rami");
-            member4.setLastName("Jaffee");
-            member4.setNickName("Rami");
-            member4.setInstrument("Keyboards");
+            member15.setFirstName("Rami");
+            member15.setLastName("Jaffee");
+            member15.setNickName("Rami");
+            member15.setInstrument("Keyboards");
 
 // Add BandMember objects to the Foo Fighters' member list
             fooFighters.getBandMemberList().add(member12);
@@ -201,28 +201,28 @@ public class BandService {
 
 // Create BandMember objects for the band
             BandMember member16 = new BandMember();
-            member1.setFirstName("Anthony");
-            member1.setLastName("Kiedis");
-            member1.setNickName("Anthony");
-            member1.setInstrument("Vocals");
+            member16.setFirstName("Anthony");
+            member16.setLastName("Kiedis");
+            member16.setNickName("Anthony");
+            member16.setInstrument("Vocals");
 
             BandMember member17 = new BandMember();
-            member2.setFirstName("Flea");
-            member2.setLastName("Balzary");
-            member2.setNickName("Flea");
-            member2.setInstrument("Bass");
+            member17.setFirstName("Flea");
+            member17.setLastName("Balzary");
+            member17.setNickName("Flea");
+            member17.setInstrument("Bass");
 
             BandMember member18 = new BandMember();
-            member3.setFirstName("John");
-            member3.setLastName("Frusciante");
-            member3.setNickName("John");
-            member3.setInstrument("Guitar");
+            member18.setFirstName("John");
+            member18.setLastName("Frusciante");
+            member18.setNickName("John");
+            member18.setInstrument("Guitar");
 
             BandMember member19 = new BandMember();
-            member4.setFirstName("Chad");
-            member4.setLastName("Smith");
-            member4.setNickName("Chad");
-            member4.setInstrument("Drums");
+            member19.setFirstName("Chad");
+            member19.setLastName("Smith");
+            member19.setNickName("Chad");
+            member19.setInstrument("Drums");
 
 // Add BandMember objects to the Red Hot Chili Peppers' member list
             redHotChiliPeppers.getBandMemberList().add(member16);
