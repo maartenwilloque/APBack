@@ -12,3 +12,38 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: album
+          uri: http://${ALBUM_SERVICE_BASEURL:localhost:8080}
+          predicates:
+            - Path=/album/{id}
+            - Method=GET
+          filters:
+            - SetPath=/api/album/{Id}
+        - id: albums
+          uri: http://${ALBUM_SERVICE_BASEURL:localhost:8080}
+          predicates:
+            - Path=/albums
+            - Method=GET
+          filters:
+            - SetPath=/api/albums
+        - id: band
+          uri: http://${ALBUM_SERVICE_BASEURL:localhost:8080}
+          predicates:
+            - Path=/band/{Id}
+            - Method=GET
+          filters:
+            - SetPath=/api/band/{Id}
+        - id: band
+          uri: http://${USER_SERVICE_BASEURL:localhost:8082}
+          predicates:
+            - Path=/rating/{albumId}
+            - Method=GET
+          filters:
+            - SetPath=/api/rating/average/{albumId}
+        - id: band
+          uri: http://${USER_SERVICE_BASEURL:localhost:8082}
+          predicates:
+            - Path=/rating
+            - Method=POST
+          filters:
+            - SetPath=/api/rating
