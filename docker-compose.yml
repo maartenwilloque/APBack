@@ -81,8 +81,8 @@ services:
      - band-service
      - user-service
    environment:
-     BAND_SERVICE_BASEURL: product-service:8080
-     ALBUM_SERVICE_BASEURL: order-service:8081
+     BAND_SERVICE_BASEURL: band-service:8080
+     ALBUM_SERVICE_BASEURL: album-service:8081
      USER_SERVICE_BASEURL: user-service:8082
 
 
