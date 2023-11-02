@@ -15,7 +15,7 @@ spring:
         - id: album
           uri: http://${ALBUM_SERVICE_BASEURL:localhost:8080}
           predicates:
-            - Path=/album/{id}
+            - Path=/album/{Id}
             - Method=GET
           filters:
             - SetPath=/api/album/{Id}
@@ -33,14 +33,14 @@ spring:
             - Method=GET
           filters:
             - SetPath=/api/band/{Id}
-        - id: band
+        - id: rating
           uri: http://${USER_SERVICE_BASEURL:localhost:8082}
           predicates:
             - Path=/rating/{albumId}
             - Method=GET
           filters:
             - SetPath=/api/rating/average/{albumId}
-        - id: band
+        - id: post-rating
           uri: http://${USER_SERVICE_BASEURL:localhost:8082}
           predicates:
             - Path=/rating
