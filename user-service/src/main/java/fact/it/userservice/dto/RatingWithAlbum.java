@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RatingWithAlbum {
+    private Long Id;
     private int score;
     private String name;
     private AlbumDto album;

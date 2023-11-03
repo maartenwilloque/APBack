@@ -46,12 +46,9 @@ public class RatingController {
         return ratingService.saveRating(ratingRequest);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{Id}")
     @ResponseStatus(HttpStatus.OK)
-    public Rating deleteRating(@RequestParam String albumId, String userId){
-        return ratingService.deleteRating(albumId,userId);
+    public Rating deleteRating(@PathVariable Long Id){
+        return ratingService.deleteRating(Id);
     }
-
-
-
 }
