@@ -15,7 +15,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 @RequiredArgsConstructor
@@ -357,6 +356,11 @@ public class AlbumService {
         band1.setBandId(band.getBandId());
         band1.setMembers(band.getMembers());
         return band1;
+    }
+
+    public AlbumDto getAlbumForRating(String albumId){
+        Album album = albumRepository.findAlbumByAlbumId(albumId);
+        return new AlbumDto(album.getAlbumId(),album.getTitle(),album.getYear());
     }
 
 

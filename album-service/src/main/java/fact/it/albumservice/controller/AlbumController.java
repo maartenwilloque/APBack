@@ -1,11 +1,6 @@
 package fact.it.albumservice.controller;
 
-import fact.it.albumservice.dto.AlbumResponse;
-import fact.it.albumservice.dto.BandResponse;
-import fact.it.albumservice.dto.BandWithAlbumResponse;
-import fact.it.albumservice.dto.SongResponse;
-import fact.it.albumservice.model.Album;
-import fact.it.albumservice.model.Song;
+import fact.it.albumservice.dto.*;
 import fact.it.albumservice.service.AlbumService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -41,4 +36,9 @@ public class AlbumController {
     @GetMapping("/band/{Id}")
     @ResponseStatus(HttpStatus.OK)
     public BandWithAlbumResponse getBand(@PathVariable("Id") String Id){ return albumService.getBandWithAlbum(Id);}
+
+    @GetMapping("albumDto/{Id}")
+    @ResponseStatus(HttpStatus.OK)
+    public AlbumDto getAlbumForRating(@PathVariable("Id") String Id) {return  albumService.getAlbumForRating(Id);}
+
 }
