@@ -2,6 +2,7 @@ package fact.it.userservice.controller;
 
 import fact.it.userservice.dto.RatingRequest;
 import fact.it.userservice.dto.RatingResponse;
+import fact.it.userservice.model.Rating;
 import fact.it.userservice.service.RatingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,7 @@ public class RatingController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
-    public void saveRating(@RequestBody RatingRequest ratingRequest){
-        ratingService.saveRating(ratingRequest);
+    public Rating saveRating(@RequestBody RatingRequest ratingRequest){
+        return ratingService.saveRating(ratingRequest);
     }
 }

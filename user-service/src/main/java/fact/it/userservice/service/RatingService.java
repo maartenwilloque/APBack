@@ -21,12 +21,14 @@ public class RatingService {
         return RatingResponse.builder().albumId(albumId).score(averageScore).build();
         }
 
-        public void saveRating(RatingRequest ratingRequest){
+        public Rating saveRating(RatingRequest ratingRequest){
         Rating rating = new Rating();
         rating.setName(ratingRequest.getName());
         rating.setAlbumId(ratingRequest.getAlbumId());
         rating.setScore(ratingRequest.getScore());
         ratingRepository.save(rating);
+
+        return rating;
         }
     }
 
