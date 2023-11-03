@@ -53,7 +53,7 @@ spring:
             - Path=/ratings/{userId}
             - Method=GET
           filters:
-            - SetPath=/api/rating/user/{UserId}
+            - SetPath=/api/rating/user/{userId}
         - id: delete-rating
           uri: http://${USER_SERVICE_BASEURL:localhost:8082}
           predicates:
