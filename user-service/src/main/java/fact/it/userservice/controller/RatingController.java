@@ -5,6 +5,7 @@ import fact.it.userservice.dto.RatingResponse;
 import fact.it.userservice.dto.RatingWithAlbum;
 import fact.it.userservice.model.Rating;
 import fact.it.userservice.service.RatingService;
+import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -24,11 +25,19 @@ public class RatingController {
         return ratingService.getAverageRating(albumId);
     }
 
+    @GetMapping("/{Id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Rating getRating (@PathVariable Long Id){
+        return ratingService.getRating(Id);
+    }
+
     @GetMapping("/user/{userId}")
     @ResponseStatus(HttpStatus.OK)
     public List<RatingWithAlbum> getUserRatings(@PathVariable String userId){
         return ratingService.getUserRatings(userId);
     }
+
+
 
 
     @PostMapping
@@ -37,10 +46,10 @@ public class RatingController {
         return ratingService.saveRating(ratingRequest);
     }
 
-    @DeleteMapping("/{albumId}")
+    @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
-    public Rating deleteRating(@PathVariable String albumId){
-        return ratingService.deleteRating(albumId);
+    public Rating deleteRating(@RequestParam String albumId, String userId){
+        return ratingService.deleteRating(albumId,userId);
     }
 
 

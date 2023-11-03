@@ -40,6 +40,9 @@ public class RatingService {
         ratingRepository.save(rating);
         return rating;
     }
+    public Rating getRating(Long Id){
+        return ratingRepository.getReferenceById(Id);
+    }
 
     public List<RatingWithAlbum> getUserRatings(String userId) {
         List<Rating> ratings = ratingRepository.findAll().stream().filter(rating -> rating.getName().equals(userId)).toList();
@@ -47,8 +50,8 @@ public class RatingService {
 
     }
 
-    public Rating deleteRating(String albumId) {
-        Optional<Rating> rating = ratingRepository.findAll().stream().filter(r -> r.getAlbumId().equals(albumId)).findFirst();
+    public Rating deleteRating(String albumId, String userId) {
+        Optional<Rating> rating = ratingRepository.findAll().stream().filter(r -> r.getAlbumId().equals(albumId)).filter(r -> r.getName().equals(userId)).findFirst();
 
         if (rating.isPresent()) {
             Rating deletedRating = rating.get();
