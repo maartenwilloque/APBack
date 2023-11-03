@@ -50,10 +50,10 @@ spring:
         - id: get-ratings-user
           uri: http://${USER_SERVICE_BASEURL:localhost:8082}
           predicates:
-            - Path=/ratings/{userId}
+            - Path=/ratings/{Id}
             - Method=GET
           filters:
-            - SetPath=/api/rating/user/{userId}
+            - SetPath=/api/rating/user/{Id}
         - id: delete-rating
           uri: http://${USER_SERVICE_BASEURL:localhost:8082}
           predicates:
