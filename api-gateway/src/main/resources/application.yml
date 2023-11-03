@@ -47,13 +47,6 @@ spring:
             - Method=POST
           filters:
             - SetPath=/api/rating
-        - id: delete-rating
-          uri: http://${USER_SERVICE_BASEURL:localhost:8082}
-          predicates:
-            - Path=/rating{Id}
-            - Method=DELETE
-          filters:
-            - SetPath=/api/rating/{Id}
         - id: get-ratings-user
           uri: http://${USER_SERVICE_BASEURL:localhost:8082}
           predicates:
@@ -61,3 +54,10 @@ spring:
             - Method=GET
           filters:
             - SetPath=/api/rating/user/{UserId}
+        - id: delete-rating
+          uri: http://${USER_SERVICE_BASEURL:localhost:8082}
+          predicates:
+            - Path=/rating{Id}
+            - Method=DELETE
+          filters:
+            - SetPath=/api/rating/{Id}
