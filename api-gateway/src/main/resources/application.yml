@@ -57,7 +57,7 @@ spring:
         - id: delete-rating
           uri: http://${USER_SERVICE_BASEURL:localhost:8082}
           predicates:
-            - Path=/rating{Id}
+            - Path=/rating/{Id}
             - Method=DELETE
           filters:
             - SetPath=/api/rating/{Id}
