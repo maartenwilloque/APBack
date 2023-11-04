@@ -9,7 +9,7 @@ door de gebruiker gegeven scores. Hier kunnen scores ook opnieuw verwijderd word
 
 ## Opbouw Services
 
-![schema services](./Readme/API Back-end diagram.jpg)
+![schema services](./Readme/APIBack-enddiagram.jpg)
 
 ### Services
 - [Docker-compose](docker-compose.yml)
@@ -96,4 +96,5 @@ door de gebruiker gegeven scores. Hier kunnen scores ook opnieuw verwijderd word
 ### /rating/Id
 - DELETE
 - Returns:
-  - Deleted Rating 
+  - Deleted Rating (api/rating) [RatingController](./user-service/src/main/java/fact/it/userservice/controller/RatingController.java)
+![Delete Rating](./Readme/deleterating.png)
