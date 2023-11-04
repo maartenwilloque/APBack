@@ -1,11 +1,17 @@
 # Project Album-opedia flutter Back-end
 ## Omschrijving
-In delutter applicatie kan je met behulp van AR albumcovers scannen.
+In de flutter applicatie kan je met behulp van AR albumcovers scannen.
 Indien deze herkend wordt, haalt de app de bijhorende informatie op uit de database. 
 Het is ook mogelijk om elk album een bepaalde rating te geven. Deze worden per album verzameld
 en bij het laden van de detailpagina, wordt steeds de gemiddelde rating getoond. Extra functionaliteit
 is er ook voor zien door het ophalen van alle albums van een bepaalde band en een overzicht van alle reeds
-door de gebruiker gegeven scores. Hier kunnen scores ook opnieuw verwijderd worden
+door de gebruiker gegeven scores. Hier kunnen scores ook opnieuw verwijderd worden.
+
+Het geheel bestaat uit 7 containers. Voor deze opzet is er gekozen voor 3 databases waarvan 2 Mysql
+(User & Album) en 1 Mongodb (Band) database met bijhorende services. Alle communicatie gebeurd via aan 
+gateway die 5 GET endpoints, 1 Post en 1 Delete endpoint bevat.
+
+
 
 ## Opbouw Services
 
@@ -20,11 +26,14 @@ door de gebruiker gegeven scores. Hier kunnen scores ook opnieuw verwijderd word
 - depends on:
   - [User-service](./user-service)
   - [Album-service](./album-service)
+  - [Band-service](./band-service)
+- [Endpoints](#Api-gateway-endpoints)
 
 ### Album-Service
 - [Docker-file](./album-service/Dockerfile)
 - Ports 8081:8081
 - MySQL Database
+  - Port 3306: 3306
 - Entities: 
   - [Album](./album-service/src/main/java/fact/it/albumservice/model/Album.java)
   - [Song](./album-service/src/main/java/fact/it/albumservice/model/Song.java)
@@ -36,6 +45,7 @@ door de gebruiker gegeven scores. Hier kunnen scores ook opnieuw verwijderd word
 - [Docker-file](./band-service/Dockerfile)
 - Ports 8080:8080
 - Mongodb Database
+  - Port 27017: 27017
 - Entities: 
   - [Band](./band-service/src/main/java/fact/it/bandservice/model/Band.java)
   - [BandMember](./band-service/src/main/java/fact/it/bandservice/model/BandMember.java)
@@ -44,6 +54,7 @@ door de gebruiker gegeven scores. Hier kunnen scores ook opnieuw verwijderd word
 - [Docker-file](./user-service/Dockerfile)
 - Ports 8082:8082
 - MySQL Database
+  - Port 3307: 3306
 - Entities:
   - [User](./user-service/src/main/java/fact/it/userservice/model/User.java)
   - [Rating](./user-service/src/main/java/fact/it/userservice/model/Rating.java)
