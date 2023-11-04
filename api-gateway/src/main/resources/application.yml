@@ -11,11 +11,10 @@ logging:
 spring:
   cloud:
     gateway:
-      default-filters:
-        - name: Cors
-        - args:
+      globalcors:
+        cors-configurations:
+          '[/**]':
             allowedOrigins: "*"
-            allowedHeaders: "*"
             allowedMethods: "*"
       routes:
         - id: album
