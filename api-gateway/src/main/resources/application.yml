@@ -11,6 +11,13 @@ logging:
 spring:
   cloud:
     gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
       routes:
         - id: album
           uri: http://${ALBUM_SERVICE_BASEURL:localhost:8080}
