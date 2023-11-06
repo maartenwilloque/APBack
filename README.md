@@ -40,6 +40,8 @@ gateway die 5 GET endpoints, 1 Post en 1 Delete endpoint bevat.
 - Depends on:
   - [Band-service](./band-service)
   - [User-service](./user-service)
+ 
+For this service we implemented testing off all methods
 
 ### Band-Service 
 - [Docker-file](./band-service/Dockerfile)
