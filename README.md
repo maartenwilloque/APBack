@@ -41,7 +41,7 @@ gateway die 5 GET endpoints, 1 Post en 1 Delete endpoint bevat.
   - [Band-service](./band-service)
   - [User-service](./user-service)
  
-For this service we implemented testing off all methods
+For this service we implemented testing off all methods [Tests](./album-service/src/test/java/fact/it/albumservice/AlbumServiceTest.java)
 
 ### Band-Service 
 - [Docker-file](./band-service/Dockerfile)
